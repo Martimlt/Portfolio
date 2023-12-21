@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="author" content="Martim Teixeira" />
+      <link
+        rel="portugal icon"
+        type="images/Portugal.ico"
+        href="/portfolio/static/portfolio/images/Portugal.ico"
+      />
+      <link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}" />
+      <script src="{% static 'portfolio/javascript/scrpt.js' %}"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Martim Teixeira</title>
+      <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+      <script src="{% static 'portfolio/javascript/javascript.js' %}"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Racing+Sans+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <a href="#about" class="logolayout"
+              ><img src="{% static 'portfolio/images/Logo.png' %}"
+              /></a>
+            <div class="topnav" id="myTopnav">
+              <a href="#about">About</a>
+              <a href="#about">Life</a>
+              <a href="#about">Projects</a>
+              <a href="#about">Contact</a>
+              <a
+                href="javascript:void(0);"
+                style="font-size: 15px; position: fixed; top: 0; right: 0"
+                class="icon"
+                onclick="myFunction()"
+                >&#9776;</a
+              >
+            </div>
+          </header>
+        <main>{% block main %} {% endblock main %}</main>
+    </body>
+</html>
