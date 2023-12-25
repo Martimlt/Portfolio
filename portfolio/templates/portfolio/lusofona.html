@@ -1,5 +1,105 @@
 {% extends 'portfolio/layout.html' %} {% block main %}
-<div>
-    <p>test</p>
+<a
+  class="fa-solid fa-arrow-left seta"
+  href="{% url 'portfolio:home_page_view' %}"
+></a>
+<div class="centerTitlescurso">
+  <h2>Information Technology Management</h2>
+    <a href="https://www.ulusofona.pt/en/lisboa/bachelor/information-technology-management" target="_blank"
+    ><button class="btn">Bachelor's Page</button></a>
+    <p class="paddingInitialTextCurso">The Bachelor's degree in Information Technology Management aims to fill an increasing 
+        need within organizations to bridge business areas (Marketing, Sales, Operations, etc.) with one of the main areas 
+        of strategic support, Information Systems. The languages of these areas are different, so only employees who can 
+        understand how companies are structured and positioned in their markets, combined with technological knowledge, 
+        can enhance a perfect Technology-Business alignment. This is the focus for those who pursue a Bachelor's degree 
+        in Management Information Systems.</p>
+</div>
+<h3 class="paddingcurso">1º ano</h3>
+<div class="containerCurso">
+  {% for cadeira in cadeiras %} {% if cadeira.ano == 1 %}s
+  <div>
+    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></b>
+    <p>{{ cadeira.descricao }}</p>
+    <p>{{ cadeira.semestre }}º semestre</p>
+    <p>Ects: {{ cadeira.ects }}</p>
+    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% endif %}
+    {% for x in range %}
+        {% if x <= cadeira.ranking %}
+            <span class="fa fa-star checked"></span>
+        {% else %}
+            <span class="fa fa-star"></span>
+        {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+<h3 class="paddingcursotext">2º ano</h3>
+<div class="containerCurso">
+  {% for cadeira in cadeiras %} {% if cadeira.ano == 2 %}
+  <div>
+    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></b>
+    <p>{{ cadeira.descricao }}</p>
+    <p>{{ cadeira.semestre }}º semestre</p>
+    <p>Ects: {{ cadeira.ects }}</p>
+    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% endif %}
+    {% for x in range %}
+        {% if x <= cadeira.ranking %}
+            <span class="fa fa-star checked"></span>
+        {% else %}
+            <span class="fa fa-star"></span>
+        {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %} {% endfor %}
+</div>
+<h3 class="paddingcursotext">3º ano</h3>
+<div class="containerCurso">
+  {% for cadeira in cadeiras %} {% if cadeira.ano == 3 %}
+  <div>
+    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></b>
+    <p>{{ cadeira.descricao }}</p>
+    <p>{{ cadeira.semestre }}º semestre</p>
+    <p>Ects: {{ cadeira.ects }}</p>
+    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% endif %}
+    {% for x in range %}
+        {% if x <= cadeira.ranking %}
+            <span class="fa fa-star checked"></span>
+        {% else %}
+            <span class="fa fa-star"></span>
+        {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %} {% endfor %}
 </div>
 {% endblock %}

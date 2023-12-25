@@ -322,12 +322,12 @@ main {
 }
 
 .paddingcurso {
-    padding-top: 3vw;
+    padding-top: 1vw;
     text-align: center;
 }
 
 .paddingInitialTextCurso {
-    padding: 2vw;
+    padding: 2vw 8vw;
 }
 
 .paddingcursotext {

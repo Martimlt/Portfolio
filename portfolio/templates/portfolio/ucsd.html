@@ -1,3 +1,136 @@
 {% extends 'portfolio/layout.html' %} {% block main %}
-
+<a
+  class="fa-solid fa-arrow-left seta"
+  href="{% url 'portfolio:home_page_view' %}"
+></a>
+<div class="centerTitlescurso">
+  <h2>Master of Sciences in Business Analytics</h2>
+    <a href="https://rady.ucsd.edu/programs/ms-business-analytics/index.html" target="_blank"
+    ><button class="btn">Master's Page</button></a>
+    <p class="paddingInitialTextCurso">The Master of Science in Business Analytics (MSBA) at 
+        UCSD Rady School of Management is a cutting-edge program designed for the digitally 
+        competitive business landscape. It features a full-time, STEM-designated curriculum 
+        enhanced with AI and Large Language Models, covering all facets of business analytics. 
+        This program, which can be completed in just 11 months, prepares graduates to be at the 
+        forefront of business data science, ready for a market projected to grow 25% in the next 
+        five years. It's an ideal pathway for those aspiring to integrate AI with business strategy 
+        and data-driven decision-making.</p>
+</div>
+<h3 class="paddingcurso">Summer Quarter</h3>
+<div class="containerCurso">
+  {% for cadeira in cadeiras %} {% if cadeira.ano == 1 %}s
+  <div>
+    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></b>
+    <p>{{ cadeira.descricao }}</p>
+    <p>{{ cadeira.semestre }}º semestre</p>
+    <p>Ects: {{ cadeira.ects }}</p>
+    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% endif %}
+    {% for x in range %}
+        {% if x <= cadeira.ranking %}
+            <span class="fa fa-star checked"></span>
+        {% else %}
+            <span class="fa fa-star"></span>
+        {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+<h3 class="paddingcursotext">Fall Quarter</h3>
+<div class="containerCurso">
+  {% for cadeira in cadeiras %} {% if cadeira.ano == 2 %}
+  <div>
+    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></b>
+    <p>{{ cadeira.descricao }}</p>
+    <p>{{ cadeira.semestre }}º semestre</p>
+    <p>Ects: {{ cadeira.ects }}</p>
+    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% endif %}
+    {% for x in range %}
+        {% if x <= cadeira.ranking %}
+            <span class="fa fa-star checked"></span>
+        {% else %}
+            <span class="fa fa-star"></span>
+        {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %} {% endfor %}
+</div>
+<h3 class="paddingcursotext">Winter Quarter</h3>
+<div class="containerCurso">
+  {% for cadeira in cadeiras %} {% if cadeira.ano == 3 %}
+  <div>
+    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></b>
+    <p>{{ cadeira.descricao }}</p>
+    <p>{{ cadeira.semestre }}º semestre</p>
+    <p>Ects: {{ cadeira.ects }}</p>
+    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% endif %}
+    {% for x in range %}
+        {% if x <= cadeira.ranking %}
+            <span class="fa fa-star checked"></span>
+        {% else %}
+            <span class="fa fa-star"></span>
+        {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %} {% endfor %}
+</div>
+<h3 class="paddingcursotext">Spring Quarter</h3>
+<div class="containerCurso">
+  {% for cadeira in cadeiras %} {% if cadeira.ano == 4 %}
+  <div>
+    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></b>
+    <p>{{ cadeira.descricao }}</p>
+    <p>{{ cadeira.semestre }}º semestre</p>
+    <p>Ects: {{ cadeira.ects }}</p>
+    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a></p>
+    {% endif %}
+    {% for x in range %}
+        {% if x <= cadeira.ranking %}
+            <span class="fa fa-star checked"></span>
+        {% else %}
+            <span class="fa fa-star"></span>
+        {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %} {% endfor %}
+</div>
 {% endblock %}
