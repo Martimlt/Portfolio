@@ -3,9 +3,9 @@
 <section class="heroImage">
   <div>
     {% if user.is_authenticated %}
-    <p>Bem vindo <b>{{ user.username }}</b>, são <span class="lettersize" id="relogio"></span> e a temperatura hoje varia entre os <span class="lettersize" id="tempMax"></span> e os <span class="lettersize" id="tempMin"></span> graus</p>
+    <p>Bem vindo <b>{{ user.username }}</b>
     {% else %} {% endif %}
-    <h2><span>Martim Teixeira.</span> A student preparing his future</h2>
+    <h2><span>Martim Teixeira.</span> <span id="dynamic-text"></span></h2>
     <div>
       {% load static %}
       <a
@@ -29,12 +29,13 @@
   </div>
 </section>
 <section>
-  <h2 class="centerTitles">About</h2>
+  <h2 class="centerTitles" id="about">About</h2>
     <div class="padding">
         <div class="text1apresentacao">
             <div class="space1">
                 <h3>Who am I?</h3>
-                <p>Hi! My name is Martim Teixeira, and I'm a 21 years old guy from Portugal</p>
+                <p>Hi! My name is Martim Teixeira, and I'm a 21 years old guy from Portugal, venturing into data with curiosity 
+                  and determination.</p>
             </div>
             <div>
                 <h3>What do I intend to do in the future?</h3>
@@ -56,10 +57,9 @@
             <div>
                 <h3>Goals:</h3>
                 <ul>
-                    <li>Ser melhor todos os dias</li>
-                    <li>Aprender cada vez mais</li>
-                    <li>Ler livros</li>
-                    <li>Ser uma pessoa prestável</li>
+                    <li>Be better every day</li>
+                    <li>Learn more and more</li>
+                    <li>Be a helpful person</li>
                 </ul>
             </div>
         </div>
@@ -69,16 +69,16 @@
       <h2 class="centerTitles">Hobbies</h2>
       <div class="hobbies">
           <div>
-              <i class="fa-solid fa-car"></i>
-              <p>Conduzir</p>
+            <i class="fa-solid fa-book"></i>
+              <p>Read</p>
           </div>
           <div>
               <i class="fa-solid fa-person-walking"></i>
-              <p>Passear</p>
+              <p>Hiking</p>
           </div>
           <div>
               <i class="fa-solid fa-utensils"></i>
-              <p>Cozinhar</p>
+              <p>Cook</p>
           </div>
       </div>
   </section>
@@ -155,11 +155,17 @@
     </div>
     <div class="percurso right">
       <div class="content">
+        <h2>10/2022</h2>
+        <p>SAP training at <i><a href="https://www.stratesys-ts.com/en/" target="_blank" class="link">Stratesys</a></i> during <i><a href="https://www.ulusofona.pt/en/event/tecweb-2022" target="_blank" class="link">Tecweb</a></i> week (10/03 - 10/07).</p>
+      </div>
+    </div>
+    <div class="percurso left">
+      <div class="content">
         <h2>12/2022</h2>
         <p>Obtained a certificate in Microsoft Power BI.</p>
       </div>
     </div>
-    <div class="percurso left">
+    <div class="percurso right">
       <div class="content">
         <h2>06/2023</h2>
         <p>
@@ -167,7 +173,7 @@
         </p>
       </div>
     </div>
-    <div class="percurso right">
+    <div class="percurso left">
       <div class="content">
         <h2>08/2023</h2>
         <p>I started my Master of Sciences in Business Analytics <p>
@@ -188,7 +194,7 @@
     {% for competencia in competencias %}
         <p>{{ competencia.competencia }}</p>
         <div class="competencias">
-            <div class="skills {{ competencia.competencia }}">{{ competencia.valor }}%</div>
+            <div class="skills {{ competencia.competencia }}" style="width: {{ competencia.valor }}%;background-color: #fa8f03;">{{ competencia.valor }}%</div>
         </div>
     {% endfor %}
 </div>
@@ -266,5 +272,19 @@
     </div>
   </div>
 </div>
-
+<section>
+  <h2 class="centerTitles">Contact</h2>
+  <div style="text-align: center;">
+    <p><b>Email:</b> mlteixeira2002@gmail.com</p>
+    <p><b>Student Email:</b> mateixeira@ucsd.edu</p>
+  </div>
+  <h2 class="centerTitles">Contact Me</h2>
+  <div class="contact-form-container">
+    <form method="post" class="contact-form">
+      {% csrf_token %}
+      {{ contact_form.as_p }}
+      <button type="submit" class="btn" style="align-items: center;">Send</button>
+    </form>
+  </div>
+</section>
 {% endblock %}

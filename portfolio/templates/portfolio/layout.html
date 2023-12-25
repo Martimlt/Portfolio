@@ -34,6 +34,25 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Racing+Sans+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        window.onload = function() {
+          {% if messages %}
+            let messageText = "";
+            {% for message in messages %}
+              messageText += "{{ message }} ";
+            {% endfor %}
+      
+            // Trigger SweetAlert with the message
+            Swal.fire({
+              title: 'Message',
+              text: messageText,
+              icon: 'success',
+              confirmButtonText: 'Close'
+            });
+          {% endif %}
+        }
+      </script>
     </head>
     <body>
         <header>
@@ -56,4 +75,60 @@
           </header>
         <main>{% block main %} {% endblock main %}</main>
     </body>
+    <script>
+      const sentences = [
+        "A student preparing his future",
+        "Exploring new horizons",
+        "Building his dreams",
+        "A data enthusiast"
+      ];
+
+      let currentSentence = 0;
+      const dynamicText = document.getElementById('dynamic-text');
+      let typingSpeed = 100; // Milliseconds per character for typing
+      let deletingSpeed = 50; // Milliseconds per character for deleting
+      let sentencePause = 2000; // Pause at the end of a sentence
+
+      function typeSentence(sentence, callback) {
+        let index = 0;
+        dynamicText.textContent = '';
+
+        function type() {
+          dynamicText.textContent += sentence[index++];
+          if (index < sentence.length) {
+            setTimeout(type, typingSpeed);
+          } else {
+            setTimeout(() => deleteSentence(callback), sentencePause);
+          }
+        }
+
+        type();
+      }
+
+      function deleteSentence(callback) {
+        let currentText = dynamicText.textContent;
+        function del() {
+          dynamicText.textContent = currentText.slice(0, currentText.length - 1);
+          currentText = dynamicText.textContent;
+          if (currentText.length > 0) {
+            setTimeout(del, deletingSpeed);
+          } else {
+            callback();
+          }
+        }
+
+        del();
+      }
+
+      function updateText() {
+        const sentence = sentences[currentSentence++];
+        typeSentence(sentence, updateText);
+
+        if (currentSentence >= sentences.length) {
+          currentSentence = 0;
+        }
+      }
+
+      updateText();
+    </script>
 </html>
