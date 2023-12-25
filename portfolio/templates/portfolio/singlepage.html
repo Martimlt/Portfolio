@@ -1,4 +1,5 @@
 {% extends 'portfolio/layout.html' %} {% block main %}
+{% load static %}
 <section class="heroImage">
   <div>
     {% if user.is_authenticated %}
@@ -138,6 +139,9 @@
             >Lusófona University - University Center of Lisbon</a
           ></i>
         </p>
+        <i><a href="{% url 'portfolio:lusofona' %}" class="link"
+          >Bachelor's Information</a
+        ></i>
       </div>
     </div>
     <div class="percurso left">
@@ -172,17 +176,84 @@
             >Rady School of Management - University of California</a
           ></i>
         </p>
-      </p>
+        <i><a href="{% url 'portfolio:ucsd' %}" class="link"
+          >Master's Information</a
+        ></i>
       </div>
     </div>
   </div>
 </section>
-<h2 class="centerTitles">Competencias</h2>
+<h2 class="centerTitles">Skills</h2>
 <div class="competenciasSpace">
-    
+    {% for competencia in competencias %}
+        <p>{{ competencia.competencia }}</p>
+        <div class="competencias">
+            <div class="skills {{ competencia.competencia }}">{{ competencia.valor }}%</div>
+        </div>
+    {% endfor %}
+</div>
+<h2 class="centerTitles">Projects</h2>
+<div class="projetos">
+  {% for projeto in projetos %}
+      {% if projeto.left == True %}
+          <div class="separadoresEsquerda">
+              <div class="imgprojeto">
+                  <img src="{{ projeto.imagem.url }}"/>
+              </div>
+              <div class="textCompetencias">
+                  <h3>{{ projeto.titulo }} - {{ projeto.cadeira }}</h3>
+                  <p>{{ projeto.descricao }}</p>
+                  <p>Realizado no {{ projeto.ano }}º ano</p>
+                  <p><b>Colega grupo:</b> {{ projeto.participante }} <a href={{ projeto.participante.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ projeto.participante.outroLink }} target="_blank"
+        ><i class="fa-solid fa-heading button1"></i></a></p>
+                  <p><b>Tecnologia utilizada:</b> {{ projeto.tecnologia }}</p>
+                  <p><b>Competência obtida:</b> {{ projeto.competencia }}</p>
+                  {% if not projeto.video == '' %}
+                  <a href="{{ projeto.video }}" target="_blank"
+                  ><i class="fa-brands fa-youtube button1"></i></a>
+                  {% endif %}
+                  <a href="{{ projeto.linkGit }}" target="_blank"
+                  ><i class="fa-brands fa-github button1"></i
+                  ></a>
+                  {% if request.user.is_authenticated %}
+                      <a href="{% url 'portfolio:editarProjeto' projeto.id %}"><button class="btn">Editar</button></a>
+                  {% endif %}
+              </div>
+          </div>
+      {% elif projeto.right == True %}
+          <div class="separadoresDireita">
+              <div class="imgprojeto">
+                  <img src="{{ projeto.imagem.url }}"/>
+              </div>
+              <div class="textCompetencias">
+                  <h3>{{ projeto.titulo }} - {{ projeto.cadeira }}</h3>
+                  <p>{{ projeto.descricao }}</p>
+                  <p>Realizado no {{ projeto.ano }}º ano</p>
+                  <p><b>Colega grupo:</b> {{ projeto.participante }} <a href={{ projeto.participante.linkedin }} target="_blank"
+        ><i class="fa-brands fa-linkedin button1"></i
+      ></a> <a href={{ projeto.participante.outroLink }} target="_blank"
+        ><i class="fa-solid fa-heading button1"></i></a></p>
+                  <p><b>Tecnologia utilizada:</b> {{ projeto.tecnologia }}</p>
+                  <p><b>Competência obtida:</b> {{ projeto.competencia }}</p>
+                  {% if not projeto.video == '' %}
+                  <a href="{{ projeto.video }}" target="_blank"
+                  ><i class="fa-brands fa-youtube button1"></i></a>
+                  {% endif %}
+                  <a href="{{ projeto.linkGit }}" target="_blank"
+                  ><i class="fa-brands fa-github button1"></i
+                  ></a>
+                  {% if request.user.is_authenticated %}
+                      <a href="{% url 'portfolio:editarProjeto' projeto.id %}"><button class="btn">Editar</button></a>
+                  {% endif %}
+              </div>
+          </div>
+      {% endif %}
+  {% endfor %}
 </div>
 <div>
-  <h2 class="centerTitles">Linguas</h2>
+  <h2 class="centerTitles">Languages</h2>
   <div class="hobbies">
     <div>
       <b>PT</b>
