@@ -120,8 +120,8 @@ STATIC_URL = '/portfolio/static/'
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
 # Media files
-MEDIA_URL = '/portfolio/'
-MEDIA_ROOT = BASE_DIR / 'portfolio/'
+MEDIA_URL = '/portfolio/images/'
+MEDIA_ROOT = BASE_DIR / 'portfolio/images/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
