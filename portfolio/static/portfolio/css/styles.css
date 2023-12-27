@@ -743,6 +743,13 @@ footer p:last-child {
         align-items: center;
     }
 
+    .imgprojeto img {
+        max-width: 100%;
+        height: auto;
+        display: block; /* optional, to remove any extra space below the image */
+    }
+    
+
     header {
         height: auto;
         background: rgb(255, 255, 255);
