@@ -5,11 +5,7 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="author" content="Martim Teixeira" />
-      <link
-        rel="portugal icon"
-        type="images/Portugal.ico"
-        href="/portfolio/static/portfolio/images/Portugal.ico"
-      />
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'portfolio/images/Portugal.ico' %}" />
       <link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}" />
       <script src="{% static 'portfolio/javascript/scrpt.js' %}"></script>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,7 +52,7 @@
     </head>
     <body>
         <header>
-            <a href="#about" class="logolayout"
+            <a href="{% url 'portfolio:home_page_view' %}" class="logolayout"
               ><img src="{% static 'portfolio/images/Logo.png' %}"
               /></a>
             <div class="topnav" id="myTopnav">

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from portfolio.models import Competencia, Projeto, Contact
+from portfolio.models import Competencia, Projeto, Contact, Licenciatura, Mestrado
 from .forms import ContactForm
 
 def home_page_view(request):
@@ -26,7 +26,9 @@ def home_page_view(request):
 
 
 def lusofona_page_view(request):
-    return render(request, 'portfolio/lusofona.html')
+    context = {'licenciaturas': Licenciatura.objects.all()}
+    return render(request, 'portfolio/lusofona.html', context)
 
 def ucsd_page_view(request):
-    return render(request, 'portfolio/ucsd.html')
+    context = {'mestrado': Mestrado.objects.all()}
+    return render(request, 'portfolio/ucsd.html', context)

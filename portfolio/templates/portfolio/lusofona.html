@@ -1,4 +1,5 @@
 {% extends 'portfolio/layout.html' %} {% block main %}
+{% load static %}
 <a
   class="fa-solid fa-arrow-left seta"
   href="{% url 'portfolio:home_page_view' %}"
@@ -16,89 +17,66 @@
 </div>
 <h3 class="paddingcurso">1º ano</h3>
 <div class="containerCurso">
-  {% for cadeira in cadeiras %} {% if cadeira.ano == 1 %}s
+  {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 1 %}
   <div>
-    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+    <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
-    <p>{{ cadeira.descricao }}</p>
-    <p>{{ cadeira.semestre }}º semestre</p>
-    <p>Ects: {{ cadeira.ects }}</p>
-    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+    <p>{{ licenciatura.descricao }}</p>
+    <p>{{ licenciatura.semestre }}º semester</p>
+    <p>Ects: {{ licenciatura.ects }}</p>
+    <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
-    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
-    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+      ></a>
+    {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin %}
+    <p>Teacher Assistant: {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
+      ></a>
     {% endif %}
-    {% for x in range %}
-        {% if x <= cadeira.ranking %}
-            <span class="fa fa-star checked"></span>
-        {% else %}
-            <span class="fa fa-star"></span>
-        {% endif %}
-    {% endfor %}
   </div>
   {% endif %}
   {% endfor %}
 </div>
 <h3 class="paddingcursotext">2º ano</h3>
 <div class="containerCurso">
-  {% for cadeira in cadeiras %} {% if cadeira.ano == 2 %}
+  {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 2 %}
   <div>
-    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+    <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
-    <p>{{ cadeira.descricao }}</p>
-    <p>{{ cadeira.semestre }}º semestre</p>
-    <p>Ects: {{ cadeira.ects }}</p>
-    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+    <p>{{ licenciatura.descricao }}</p>
+    <p>{{ licenciatura.semestre }}º semestre</p>
+    <p>Ects: {{ licenciatura.ects }}</p>
+    <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+      ></a> <a href={{ licenciatura.professor.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
-    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
-    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+    {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+      ></a> <a href={{ licenciatura.professorAuxiliar.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
     {% endif %}
-    {% for x in range %}
-        {% if x <= cadeira.ranking %}
-            <span class="fa fa-star checked"></span>
-        {% else %}
-            <span class="fa fa-star"></span>
-        {% endif %}
-    {% endfor %}
   </div>
   {% endif %} {% endfor %}
 </div>
 <h3 class="paddingcursotext">3º ano</h3>
 <div class="containerCurso">
-  {% for cadeira in cadeiras %} {% if cadeira.ano == 3 %}
+  {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 3 %}
   <div>
-    <b>{{ cadeira.nome }} <a href={{ cadeira.linklusofona }} target="_blank"
+    <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
-    <p>{{ cadeira.descricao }}</p>
-    <p>{{ cadeira.semestre }}º semestre</p>
-    <p>Ects: {{ cadeira.ects }}</p>
-    <p>Professor: {{ cadeira.professor.primeiroNome }} {{ cadeira.professor.ultimoNome }} <a href={{ cadeira.professor.linkedin }} target="_blank"
+    <p>{{ licenciatura.descricao }}</p>
+    <p>{{ licenciatura.semestre }}º semestre</p>
+    <p>Ects: {{ licenciatura.ects }}</p>
+    <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ cadeira.professor.outroLink }} target="_blank"
+      ></a> <a href={{ licenciatura.professor.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
-    {% if not cadeira.professor.linkedin == cadeira.professorAuxiliar.linkedin %}
-    <p>Professor Auxiliar: {{ cadeira.professorAuxiliar.primeiroNome }} {{ cadeira.professorAuxiliar.ultimoNome }} <a href={{ cadeira.professorAuxiliar.linkedin }} target="_blank"
+    {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin %}
+    <p>Professor Auxiliar: {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ cadeira.professorAuxiliar.outroLink }} target="_blank"
+      ></a> <a href={{ licenciatura.professorAuxiliar.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
     {% endif %}
-    {% for x in range %}
-        {% if x <= cadeira.ranking %}
-            <span class="fa fa-star checked"></span>
-        {% else %}
-            <span class="fa fa-star"></span>
-        {% endif %}
-    {% endfor %}
   </div>
   {% endif %} {% endfor %}
 </div>
