@@ -65,17 +65,15 @@
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
-    <p>{{ licenciatura.semestre }}rd semester</p>
+    <p>{{ licenciatura.semestre }}st semester</p>
     <p>Ects: {{ licenciatura.ects }}</p>
     <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
+      ></a></p>
     {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin %}
     <p>Teacher Assistant: {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professorAuxiliar.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
+      ></a></p>
     {% endif %}
   </div>
   {% endif %} {% endfor %}

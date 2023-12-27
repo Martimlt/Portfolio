@@ -201,62 +201,41 @@
 </div>
 <h2 class="centerTitles" id="projects" style="scroll-margin-top: 70px;">Projects</h2>
 <div class="projetos">
-  {% for projeto in projetos %}
-      {% if projeto.left == True %}
-          <div class="separadoresEsquerda">
-              <div class="imgprojeto">
-                  <img src="{{ projeto.imagem.url }}"/>
-              </div>
-              <div class="textCompetencias">
-                  <h3>{{ projeto.titulo }} - {{ projeto.cadeira }} <a href="{{ projeto.video }}" target="_blank"><i class="fa-solid fa-link button1"></i></a>
-                    <a href="{{ projeto.linkGit }}" target="_blank"
-                    ><i class="fa-brands fa-github button1"></i
-                    ></a></h3> 
-                  <p>{{ projeto.descricao }}</p>
-                  {% if projeto.ano == 1 %}
-                  <p>Carried out in the {{ projeto.ano }}st year</p>
-                  {% endif %}
-                  {% if projeto.ano == 2 %}
-                  <p>Carried out in the {{ projeto.ano }}nd year</p>
-                  {% endif %}
-                  {% if projeto.ano == 3 %}
-                  <p>Carried out in the {{ projeto.ano }}rd year</p>
-                  {% endif %}
-                  {% if not projeto.participante.primeiroNome == 'None' %}
-                  <p><b>Colega grupo:</b> {{ projeto.participante }} <a href={{ projeto.participante.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ projeto.participante.outroLink }} target="_blank"
-        ><i class="fa-solid fa-heading button1"></i></a></p>
-                  {% endif %}
-                  <p><b>Used Technologies:</b> {{ projeto.tecnologia }}</p>
-              </div>
-          </div>
-      {% elif projeto.right == True %}
-          <div class="separadoresDireita">
-              <div class="imgprojeto">
-                  <img src="{{ projeto.imagem.url }}"/>
-              </div>
-              <div class="textCompetencias">
-                  <h3>{{ projeto.titulo }} - {{ projeto.cadeira }}</h3>
-                  <p>{{ projeto.descricao }}</p>
-                  <p>Realizado no {{ projeto.ano }}º ano</p>
-                  <p><b>Colega grupo:</b> {{ projeto.participante }} <a href={{ projeto.participante.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ projeto.participante.outroLink }} target="_blank"
-        ><i class="fa-solid fa-heading button1"></i></a></p>
-                  <p><b>Tecnologia utilizada:</b> {{ projeto.tecnologia }}</p>
-                  <p><b>Competência obtida:</b> {{ projeto.competencia }}</p>
-                  {% if not projeto.video == '' %}
-                  <a href="{{ projeto.video }}" target="_blank"
-                  ><i class="fa-brands fa-youtube button1"></i></a>
-                  {% endif %}
-                  <a href="{{ projeto.linkGit }}" target="_blank"
-                  ><i class="fa-brands fa-github button1"></i
-                  ></a>
-              </div>
-          </div>
-      {% endif %}
-  {% endfor %}
+  <div class="separadoresEsquerda">
+      <div class="imgprojeto">
+          <img src="{% static 'portfolio/images/website ucsd.png' %}"/>
+      </div>
+      <div class="textCompetencias">
+          <h3>UCSD Parking Lots - Collecting and Analyze Large Data <a href="https://ucsdparkinglots.pythonanywhere.com/" target="_blank"><i class="fa-solid fa-link button1"></i></a>
+            <a href="https://github.com/rsm-mateixeira/ucsdparking" target="_blank"
+            ><i class="fa-brands fa-github button1"></i
+            ></a></h3> 
+          <p>This project at UC San Diego's Rady School of Management analyzes a decade-long dataset of parking lot 
+            usage across UCSD campuses, focusing on post-2018 data to examine the impact of COVID-19 on parking trends. 
+            Data was collected hourly from lots and structures and analyzed for patterns. Techniques used included web 
+            scraping, data transformation, Tableau for visualization, and Django for website development. The project 
+            aims to improve campus planning and resource allocation.</p>
+          <p>Carried out in the Fall quarter</p>
+          <p><b>Colega grupo:</b> Grace Kim, Jeremy Edwards and Shridhar Rawat</p>
+          <p><b>Used Technologies:</b> Tableau, Django, HTML, CSS, JavaScript</p>
+      </div>
+  </div>
+  <div class="separadoresDireita">
+      <div class="imgprojeto">
+          <img src="{% static 'portfolio/images/website tml.png' %}"/>
+      </div>
+      <div class="textCompetencias">
+          <h3>Mobility Dashboards - Final Course Work<a href="https://tmldashboards.pythonanywhere.com/" target="_blank"><i class="fa-solid fa-link button1"></i></a>
+            <a href="https://github.com/Martimt-22006053/tfc-dashboards" target="_blank"
+            ><i class="fa-brands fa-github button1"></i
+            ></a></h3>
+          <p>A webpage was developed to showcase Dashboards related to the INE Survey conducted in 2017 about mobility in the 
+            Lisbon Metropolitan Area. This project involved utilizing relevant data, processing it to extract essential information,
+             and presenting it in visualizations for analysis and decision-making purposes.</p>
+          <p>Carried out in the 3rd year</p>
+          <p><b>Used Technologies:</b> Microsoft Power BI, Django, HTML, CSS, JavaScript</p>
+      </div>
+  </div>
 </div>
 <div>
   <h2 class="centerTitles">Languages</h2>
