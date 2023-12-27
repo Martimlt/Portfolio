@@ -15,14 +15,14 @@
         can enhance a perfect Technology-Business alignment. This is the focus for those who pursue a Bachelor's degree 
         in Management Information Systems.</p>
 </div>
-<h3 class="paddingcurso">1º ano</h3>
+<h3 class="paddingcurso">1st year</h3>
 <div class="containerCurso">
   {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 1 %}
   <div>
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
-    <p>{{ licenciatura.semestre }}º semester</p>
+    <p>{{ licenciatura.semestre }}st semester</p>
     <p>Ects: {{ licenciatura.ects }}</p>
     <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
@@ -36,7 +36,7 @@
   {% endif %}
   {% endfor %}
 </div>
-<h3 class="paddingcursotext">2º ano</h3>
+<h3 class="paddingcursotext">2nd year</h3>
 <div class="containerCurso">
   {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 2 %}
   <div>
@@ -58,7 +58,7 @@
   </div>
   {% endif %} {% endfor %}
 </div>
-<h3 class="paddingcursotext">3º ano</h3>
+<h3 class="paddingcursotext">3rd year</h3>
 <div class="containerCurso">
   {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 3 %}
   <div>
