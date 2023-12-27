@@ -10,3 +10,6 @@ urlpatterns = [
     path('ucsd', views.ucsd_page_view, name='ucsd'),
     path('lusofona', views.lusofona_page_view, name='lusofona'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
