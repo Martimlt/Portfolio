@@ -30,5 +30,5 @@ def lusofona_page_view(request):
     return render(request, 'portfolio/lusofona.html', context)
 
 def ucsd_page_view(request):
-    context = {'mestrado': Mestrado.objects.all()}
+    context = {'mestrados': Mestrado.objects.all()}
     return render(request, 'portfolio/ucsd.html', context)

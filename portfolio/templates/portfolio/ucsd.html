@@ -18,118 +18,62 @@
 </div>
 <h3 class="paddingcurso">Summer Quarter</h3>
 <div class="containerCurso">
-  {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 1 %}s
+  {% for mestrado in mestrados %} {% if mestrado.trimestre == 1 %}
   <div>
-    <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
+    <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
-    <p>{{ licenciatura.descricao }}</p>
-    <p>{{ licenciatura.semestre }}º semestre</p>
-    <p>Ects: {{ licenciatura.ects }}</p>
-    <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
+    <p>{{ mestrado.descricao }}</p>
+    <p><b>Units:</b> {{ mestrado.units }}</p>
+    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }} <a href={{ mestrado.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professor.outroLink }} target="_blank"
+      ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
-    {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin %}
-    <p>Professor Auxiliar: {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professorAuxiliar.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
-    {% endif %}
-    {% for x in range %}
-        {% if x <= licenciatura.ranking %}
-            <span class="fa fa-star checked"></span>
-        {% else %}
-            <span class="fa fa-star"></span>
-        {% endif %}
-    {% endfor %}
   </div>
   {% endif %}
   {% endfor %}
 </div>
 <h3 class="paddingcursotext">Fall Quarter</h3>
 <div class="containerCurso">
-  {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 2 %}
+  {% for mestrado in mestrados %} {% if mestrado.trimestre == 2 %}
   <div>
-    <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
+    <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
-    <p>{{ licenciatura.descricao }}</p>
-    <p>{{ licenciatura.semestre }}º semestre</p>
-    <p>Ects: {{ licenciatura.ects }}</p>
-    <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
+    <p>{{ mestrado.descricao }}</p>
+    <p><b>Units:</b> {{ mestrado.units }}</p>
+    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }} <a href={{ mestrado.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professor.outroLink }} target="_blank"
+      ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
-    {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin %}
-    <p>Professor Auxiliar: {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professorAuxiliar.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
-    {% endif %}
-    {% for x in range %}
-        {% if x <= licenciatura.ranking %}
-            <span class="fa fa-star checked"></span>
-        {% else %}
-            <span class="fa fa-star"></span>
-        {% endif %}
-    {% endfor %}
   </div>
   {% endif %} {% endfor %}
 </div>
 <h3 class="paddingcursotext">Winter Quarter</h3>
 <div class="containerCurso">
-  {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 3 %}
+  {% for mestrado in mestrados %} {% if mestrado.trimestre == 3 %}
   <div>
-    <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
+    <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
-    <p>{{ licenciatura.descricao }}</p>
-    <p>{{ licenciatura.semestre }}º semestre</p>
-    <p>Ects: {{ licenciatura.ects }}</p>
-    <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
+    <p>{{ mestrado.descricao }}</p>
+    <p><b>Units:</b> {{ mestrado.units }}</p>
+    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }} <a href={{ mestrado.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professor.outroLink }} target="_blank"
+      ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
-    {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin %}
-    <p>Professor Auxiliar: {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professorAuxiliar.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
-    {% endif %}
-    {% for x in range %}
-        {% if x <= licenciatura.ranking %}
-            <span class="fa fa-star checked"></span>
-        {% else %}
-            <span class="fa fa-star"></span>
-        {% endif %}
-    {% endfor %}
   </div>
   {% endif %} {% endfor %}
 </div>
 <h3 class="paddingcursotext">Spring Quarter</h3>
 <div class="containerCurso">
-  {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 4 %}
+  {% for mestrado in mestrados %} {% if mestrado.trimestre == 4 %}
   <div>
-    <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
+    <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
-    <p>{{ licenciatura.descricao }}</p>
-    <p>{{ licenciatura.semestre }}º semestre</p>
-    <p>Ects: {{ licenciatura.ects }}</p>
-    <p>Professor: {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
+    <p>{{ mestrado.descricao }}</p>
+    <p><b>Units:</b> {{ mestrado.units }}</p>
+    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }} <a href={{ mestrado.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professor.outroLink }} target="_blank"
+      ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
-    {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin %}
-    <p>Professor Auxiliar: {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ licenciatura.professorAuxiliar.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
-    {% endif %}
-    {% for x in range %}
-        {% if x <= licenciatura.ranking %}
-            <span class="fa fa-star checked"></span>
-        {% else %}
-            <span class="fa fa-star"></span>
-        {% endif %}
-    {% endfor %}
   </div>
   {% endif %} {% endfor %}
 </div>
