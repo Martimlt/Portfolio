@@ -21,19 +21,37 @@
 </div>
 <h3 class="paddingcurso">Summer Quarter</h3>
 <div class="containerCurso">
-  {% for mestrado in mestrados %} {% if mestrado.trimestre == 1 %}
   <div>
-    <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></b>
-    <p>{{ mestrado.descricao }}</p>
-    <p><b>Units:</b> {{ mestrado.units }}</p>
-    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }} <a href={{ mestrado.professor.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
+    <b>Special Topics Math and Programming for Business Analytics</b>
+    <p>This course covers essential mathematics and programming skills for business analytics. It focuses on statistical 
+      analysis, linear algebra, and optimization, combined with practical programming in languages like Python or R. Students 
+      learn to apply these skills to real-world business scenarios, preparing them for data-driven decision-making in a business 
+      context.</p>
+    <p><b>Units:</b> 4</p>
+    <p><b>Professors:</b> Vincent R. Nijs <a href="https://rady.ucsd.edu/faculty-research/faculty/vincent-nijs.html" target="_blank"
+        ><i class="fa-solid fa-link button1"></i
+      ></a> and Terrence August <a href="https://rady.ucsd.edu/faculty-research/faculty/terrence-august.html" target="_blank"
+      ><i class="fa-solid fa-link button1"></i></a>
+      </p>
   </div>
-  {% endif %}
-  {% endfor %}
+  <div>
+    <b>Special Topics Big Data Tech SQL and ETL</b>
+    <p>This course offers an introduction to Big Data technologies, focusing on SQL for database management and the ETL process. 
+      Students learn to handle large datasets by mastering SQL queries and developing skills in the ETL process, essential for 
+      data preparation and analysis in Big Data environments. The course is tailored for those interested in data management and 
+      analytics.</p>
+    <p><b>Units:</b> 2</p>
+  </div>
+  <div>
+    <b>Business Analytics in Marketing, Finance, and Operations</b>
+    <p>Business analytics projects should strive to create substantial value to an organization by solving impactful business 
+      problems. In this class, students will learn to identify business opportunities in the substantive areas of marketing, 
+      finance, and operations.</p>
+    <p><b>Units:</b> 4</p>
+    <p><b>Professors:</b> Terrence August <a href="https://rady.ucsd.edu/faculty-research/faculty/terrence-august.html" target="_blank"
+      ><i class="fa-solid fa-link button1"></i></a>
+      </p>
+  </div>
 </div>
 <h3 class="paddingcursotext">Fall Quarter</h3>
 <div class="containerCurso">
@@ -43,10 +61,17 @@
         ><i class="fa-solid fa-link button1"></i></a></b>
     <p>{{ mestrado.descricao }}</p>
     <p><b>Units:</b> {{ mestrado.units }}</p>
-    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }} <a href={{ mestrado.professor.linkedin }} target="_blank"
+    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }}
+      {% if not mestrado.professor.linkedin == 'https://www.none.com' %}
+      <a href={{ mestrado.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
+      ></a>
+      {% endif %}
+      {% if not mestrado.professor.outroLink == 'https://www.none.com' %}
+      <a href={{ mestrado.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a>
+      {% endif %}
+      </p>
   </div>
   {% endif %} {% endfor %}
 </div>
@@ -59,16 +84,23 @@
         ><i class="fa-solid fa-link button1"></i></a></b>
     <p>{{ mestrado.descricao }}</p>
     <p><b>Units:</b> {{ mestrado.units }}</p>
-    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }} <a href={{ mestrado.professor.linkedin }} target="_blank"
+    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }}
+      {% if not mestrado.professor.linkedin == 'https://www.none.com' %}
+      <a href={{ mestrado.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
+      ></a>
+      {% endif %}
+      {% if not mestrado.professor.outroLink == 'https://www.none.com' %}
+      <a href={{ mestrado.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a>
+      {% endif %}
+      </p>
   </div>
   {% endwith %} {% endif %}
+  {% endfor %}
   {% if winter_val == False %}
   <p style="font-size: 18px;">Coming Soon...</p>
   {% endif %}
-  {% endfor %}
 </div>
 <h3 class="paddingcursotext">Spring Quarter</h3>
 <div class="containerCurso">
@@ -79,16 +111,23 @@
         ><i class="fa-solid fa-link button1"></i></a></b>
     <p>{{ mestrado.descricao }}</p>
     <p><b>Units:</b> {{ mestrado.units }}</p>
-    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }} <a href={{ mestrado.professor.linkedin }} target="_blank"
+    <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }}
+      {% if not mestrado.professor.linkedin == 'https://www.none.com' %}
+      <a href={{ mestrado.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
-      ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
+      ></a>
+      {% endif %}
+      {% if not mestrado.professor.outroLink == 'https://www.none.com' %}
+      <a href={{ mestrado.professor.outroLink }} target="_blank"
+        ><i class="fa-solid fa-link button1"></i></a>
+      {% endif %}
+      </p>
   </div>
   {% endwith %} {% endif %} 
+  {% endfor %}
   {% if spring_val == False %}
   <p style="font-size: 18px;">Coming Soon...</p>
   {% endif %}
-  {% endfor %}
 </div>
 {% endwith %}
 {% endwith %}
