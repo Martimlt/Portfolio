@@ -1,4 +1,7 @@
 {% extends 'portfolio/layout.html' %} {% block main %}
+{% load static %}
+{% with spring_val=False %}
+{% with winter_val=False %}
 <a
   class="fa-solid fa-arrow-left seta"
   href="{% url 'portfolio:home_page_view' %}"
@@ -50,6 +53,7 @@
 <h3 class="paddingcursotext">Winter Quarter</h3>
 <div class="containerCurso">
   {% for mestrado in mestrados %} {% if mestrado.trimestre == 3 %}
+  {% with winter_val=True %}
   <div>
     <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
@@ -60,11 +64,16 @@
       ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
   </div>
-  {% endif %} {% endfor %}
+  {% endwith %} {% endif %}
+  {% if winter_val == False %}
+  <p style="font-size: 18px;">Coming Soon...</p>
+  {% endif %}
+  {% endfor %}
 </div>
 <h3 class="paddingcursotext">Spring Quarter</h3>
 <div class="containerCurso">
   {% for mestrado in mestrados %} {% if mestrado.trimestre == 4 %}
+  {% with spring_val=True %}
   <div>
     <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
@@ -75,6 +84,12 @@
       ></a> <a href={{ mestrado.professor.outroLink }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></p>
   </div>
-  {% endif %} {% endfor %}
+  {% endwith %} {% endif %} 
+  {% if spring_val == False %}
+  <p style="font-size: 18px;">Coming Soon...</p>
+  {% endif %}
+  {% endfor %}
 </div>
+{% endwith %}
+{% endwith %}
 {% endblock %}

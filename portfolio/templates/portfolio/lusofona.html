@@ -22,7 +22,11 @@
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
+    {% if licenciatura.semestre == 1 %}
     <p>{{ licenciatura.semestre }}st semester</p>
+    {% elif licenciatura.semestre == 2 %}
+    <p>{{ licenciatura.semestre }}nd semester</p>
+    {% endif %}
     <p><b>Ects:</b> {{ licenciatura.ects }}</p>
     <p><b>Professor:</b> {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} 
       {% if not licenciatura.professor.linkedin == 'https://www.none.com' %}
@@ -47,7 +51,11 @@
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
+    {% if licenciatura.semestre == 1 %}
+    <p>{{ licenciatura.semestre }}st semester</p>
+    {% elif licenciatura.semestre == 2 %}
     <p>{{ licenciatura.semestre }}nd semester</p>
+    {% endif %}
     <p><b>Ects:</b> {{ licenciatura.ects }}</p>
     <p><b>Professor:</b> {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
         ><i class="fa-brands fa-linkedin button1"></i
@@ -68,7 +76,11 @@
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
         ><i class="fa-solid fa-link button1"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
+    {% if licenciatura.semestre == 1 %}
     <p>{{ licenciatura.semestre }}st semester</p>
+    {% elif licenciatura.semestre == 2 %}
+    <p>{{ licenciatura.semestre }}nd semester</p>
+    {% endif %}
     <p><b>Ects:</b> {{ licenciatura.ects }}</p>
     <p><b>Professor:</b> {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} 
       {% if not licenciatura.professor.linkedin == 'https://www.none.com' %}
