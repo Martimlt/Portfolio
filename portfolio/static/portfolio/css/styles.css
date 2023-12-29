@@ -397,6 +397,7 @@ main {
     display: flex;
     padding-bottom: 2vw;
     justify-content: center;
+    align-items: center;
 }
 
 .separadoresDireita {
@@ -404,6 +405,7 @@ main {
     padding-bottom: 2vw;
     justify-content: center;
     flex-direction: row-reverse;
+    align-items: center;
 }
 
 .textCompetencias {
@@ -643,7 +645,7 @@ footer p:last-child {
 
 /* -------------- media query -------------- */
 
-@media screen and (max-width: 1005px) {
+@media screen and (max-width: 1000px) {
     /* Alterar a outra media query para 660 */
 
 
@@ -720,7 +722,7 @@ footer p:last-child {
 
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .separadoresEsquerda {
         display: grid;
         flex-flow: row wrap;
@@ -738,15 +740,15 @@ footer p:last-child {
     }
 
     .imgprojeto {
-        justify-content: center;
-        text-align: center;
-        align-items: center;
+        display: flex; /* Use flexbox for alignment */
+        justify-content: center; /* Horizontally center the child */
+        align-items: center; /* Vertically center the child (if needed) */
     }
 
     .imgprojeto img {
         max-width: 100%;
         height: auto;
-        display: block; /* optional, to remove any extra space below the image */
+        margin: 0 auto; /* Centers the image within the flex container */
     }
     
 
@@ -785,7 +787,7 @@ footer p:last-child {
 
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .topnav.responsive {
         position: relative;
     }
