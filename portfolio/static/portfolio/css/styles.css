@@ -446,25 +446,16 @@ form * {
 /* ----------- footer ----------- */
 
 footer {
-    height: 5vh;
-    padding: 0 2vw;
-    align-items: center;
+    background-color: #ffffff;
+    color: #333;
     text-align: center;
-    color: rgb(0, 0, 0);
-    background: rgb(255, 255, 255);
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
 }
 
-footer div {
-    margin: 10px;
-}
-
-footer p {
-    font-size: 0.7rem;
-}
-
-footer p:last-child {
-    font-size: 0.7rem;
-    padding-bottom: 10px;
+.footer-content p {
+    margin: 5px 0;
 }
 
 /* ---------- Livro Elogios ----------- */
