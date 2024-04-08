@@ -235,8 +235,26 @@
     {% endfor %}
 </div>
 <h2 class="centerTitles" id="projects" style="scroll-margin-top: 75px;">Projects</h2>
-<div class="projetos">
-  <div class="separadoresEsquerda">
+<div class="projetos" id="projectsContainer">
+  <div class="separadoresDireita" id="project1">
+    <div class="imgprojeto">
+        <img src="{% static 'portfolio/images/AUD.png' %}"/>
+    </div>
+    <div class="textCompetencias">
+        <h3>Amazon Reviews Sentiment Analysis - Analyzing Unstructured Data <a href="https://github.com/rsm-iiribarrenpenuelas/final-project-mgta415" target="_blank"><i class="fa-brands fa-github button1"></i
+          ></a></h3> 
+        <p>In this project, we developed a sentiment analysis system tailored to Amazon product reviews. Leveraging 
+          advanced natural language processing (NLP) and machine learning techniques, the goal was to accurately 
+          determine the sentiment expressed in feedback and classify it as positive, negative, or neutral categories. 
+          For that, we explored sentiment trends, word usage, and user engagement. This foundational work informed the 
+          design of a sophisticated analysis system capable to predict the sentiment. We used different model's, and 
+          evaluated the performance using train, test and validate sets, to ensure effectiveness.</p>
+        <p>Carried out in the Winter quarter of the Master's degree</p>
+        <p><b>Team mates:</b> Gaetan Rieben, Iñaki Iribarren and Zeyu Chen</p>
+        <p><b>Used Technologies:</b> Python, Machine Learning</p>
+    </div>
+  </div>
+  <div class="separadoresEsquerda" id="project2">
       <div class="imgprojeto">
           <img src="{% static 'portfolio/images/Website_ucsd.png' %}"/>
       </div>
@@ -255,22 +273,22 @@
           <p><b>Used Technologies:</b> Tableau, Django, HTML, CSS, JavaScript</p>
       </div>
   </div>
-  <div class="separadoresDireita">
+  <div class="separadoresDireita" id="project3">
     <div class="imgprojeto">
         <img src="{% static 'portfolio/images/Web_mining_project.png' %}"/>
     </div>
     <div class="textCompetencias">
         <h3>Movies Recommendation and Rating Prediction - Web Mining & Recommender Systems <a href="https://github.com/Martimlt/Movies-Recommender-System" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3> 
         <p>This project aims to create a movie recommendation system, focusing on user preferences and viewing history. 
-          Key steps include selecting a dataset rich in user ratings and movie preferences, and analyzing user behavior 
+          Key steps include using a dataset with user ratings and movie preferences, and analyzing user behavior 
           in film. The system will use machine learning for predicting user preferences and estimating ratings. The approach 
           combines content-based filtering (cosine similarity scores) with advanced collaborative filtering methods like NMF and SVD. 
-          The most accurate model will be used to recommend the top 10 movies to users.</p>
+          The most accurate model was used to recommend the top 10 movies to users.</p>
         <p>Carried out in the Fall quarter of the Master's degree</p>
-        <p><b>Used Technologies:</b> Python</p>
+        <p><b>Used Technologies:</b> Python, Machine Learning</p>
     </div>
   </div>
-  <div class="separadoresEsquerda">
+  <div class="separadoresEsquerda" id="project4">
     <div class="imgprojeto">
         <img src="{% static 'portfolio/images/website_tml.png' %}"/>
     </div>
@@ -286,7 +304,7 @@
         <p><b>Used Technologies:</b> Microsoft Power BI, Django, HTML, CSS, JavaScript</p>
     </div>
   </div>
-  <div class="separadoresDireita">
+  <div class="separadoresDireita" id="project5">
     <div class="imgprojeto">
         <img src="{% static 'portfolio/images/projetoLP2.png' %}"/>
     </div>
@@ -303,7 +321,7 @@
         <p><b>Used Technologies:</b> Java</p>
     </div>
   </div>
-  <div class="separadoresEsquerda">
+  <div class="separadoresEsquerda" id="project6">
     <div class="imgprojeto">
         <img src="{% static 'portfolio/images/ProjetoFP.png' %}"/>
     </div>
@@ -321,6 +339,7 @@
     </div>
   </div>
 </div>
+<button id="toggleProjects" onclick="toggleProjects()" style="display: block; margin: 0px auto 20px auto; background: none; border: none; color: blue; text-decoration: underline; cursor: pointer; padding: 0; font-size: 16px;">Show More Projects ↓</button>
 <section>
   <h2 class="centerTitles" id="contact" style="scroll-margin-top: 75px;">Contact</h2>
   <div style="text-align: center;">
