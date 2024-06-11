@@ -1,7 +1,7 @@
 {% extends 'portfolio/layout.html' %} {% block main %}
 {% load static %}
 {% with spring_val=False %}
-{% with winter_val=False %}
+{% with winter_val=True %}
 <a
   class="fa-solid fa-arrow-left seta"
   href="{% url 'portfolio:home_page_view' %}"
