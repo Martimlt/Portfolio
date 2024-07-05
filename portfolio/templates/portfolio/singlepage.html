@@ -240,6 +240,23 @@
 </div>
 <h2 class="centerTitles" id="projects" style="scroll-margin-top: 75px;">Projects</h2>
 <div class="projetos" id="projectsContainer">
+  <div class="separadoresEsquerda" id="project2">
+    <div class="imgprojeto">
+        <img src="{% static 'portfolio/images/Mazda_Capstone.png' %}"/>
+    </div>
+    <div class="textCompetencias">
+        <h3>Drivers of Customer Loyalty - Business Analytics Capstone</h3> 
+        <p>The project analyzed factors affecting dealership loyalty for Mazda North American Operations, focusing
+           on the DSA program. The study utilized various datasets, including sales data,
+            customer surveys, service retention statistics, and warranty claims. To analyze the data, advanced 
+            statistical methods and machine learning models were employed, including ANOVA tests, T-tests, and linear 
+            regression. These techniques helped understand the impact of the DSA program and other factors on customer 
+            loyalty and satisfaction.</p>
+        <p>Carried out in the Spring quarter of the Master's degree</p>
+        <p><b>Team mates:</b> Apoorav Sharma, Lakshay Chopra, Phalguni Kamani</p>
+        <p><b>Used Technologies:</b> Python, Machine Learning</p>
+    </div>
+</div>
   <div class="separadoresDireita" id="project1">
     <div class="imgprojeto">
         <img src="{% static 'portfolio/images/AUD.png' %}"/>
@@ -350,13 +367,14 @@
     <p><b>Email:</b> mlteixeira2002@gmail.com</p>
     <p><b>Student Email:</b> mateixeira@ucsd.edu</p>
     <p><b>Phone Number:</b> +1-619-983-5184</p>
+    <p><b>Alternative Phone Number:</b> +351 931 327 957</p>
   </div>
   <h2 class="centerTitles">Contact Me!</h2>
   <div class="contact-form-container">
     <form method="post" class="contact-form">
       {% csrf_token %}
       {{ contact_form.as_p }}
-      <button type="submit" class="btn" style="align-items: center;">Send</button>
+      <button type="submit" class="btn" style="align-items: center;">Submit</button>
     </form>
   </div>
 </section>
