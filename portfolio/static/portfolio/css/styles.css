@@ -13,6 +13,7 @@ html {
     padding: 1vw 0vw;
     margin: 0px;
     text-align: center;
+    color: rgb(218, 217, 217);
 }
 
 .centertext {
@@ -33,8 +34,8 @@ html {
 
 header {
     height: 10vh;
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background: rgb(21, 25, 32);    
+    color: rgb(255, 255, 255);
     top: 0;
     display: flex;
     justify-content: space-between;
@@ -60,7 +61,7 @@ header {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    color: black;
+    color: rgb(218, 217, 217);
 }
 
 .topnav a:nth-child(7) {
@@ -82,8 +83,7 @@ header {
 
 
 main {
-    background-color: rgb(245, 238, 206);
-    color: black;
+    background-color: rgb(30, 35, 46);
 }
 
 
@@ -97,6 +97,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: rgb(218, 217, 217);
 }
 
 .heroImage span:nth-child(1) {
@@ -129,10 +130,22 @@ main {
     border-radius: 50%;
     border: 0px;
     padding: 2px;
-    color: black;
+    color: rgb(218, 217, 217);
 }
 
 .button1:hover {
+    opacity: 0.7
+}
+
+.button2 {
+    font-size: 1.2em;
+    border-radius: 50%;
+    border: 0px;
+    padding: 2px;
+    color: rgb(0, 0, 0);
+}
+
+.button2:hover {
     opacity: 0.7
 }
 
@@ -171,6 +184,7 @@ main {
 .padding {
     display: flex;
     padding: 1vw 8vw 2vw 8vw;
+    color: rgb(218, 217, 217);
 }
 
 
@@ -208,6 +222,7 @@ main {
     justify-content: space-evenly;
     font-size: 3em;
     padding: 2vw 2vw 3vw;
+    color: rgb(218, 217, 217);
 }
 
 .hobbies p {
@@ -219,7 +234,7 @@ main {
 
 .containerCurso {
     display: flex;
-    background-color: rgb(245, 238, 206);
+    background-color: rgb(30, 35, 46);
     flex-flow: row wrap;
     justify-content: center;
     padding: 2vw 3vw;
@@ -238,11 +253,13 @@ main {
 .centerTitlescurso {
     margin: 0px;
     text-align: center;
+    color: rgb(218, 217, 217);
 }
 
 .paddingcurso {
     padding-top: 1vw;
     text-align: center;
+    color: rgb(218, 217, 217);
 }
 
 .paddingInitialTextCurso {
@@ -251,12 +268,13 @@ main {
 
 .paddingcursotext {
     text-align: center;
+    color: rgb(218, 217, 217);
 }
 
 .seta {
     padding: 1vw;
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .checked {
@@ -410,6 +428,7 @@ main {
 
 .textCompetencias {
     padding: 1vw;
+    color: rgb(218, 217, 217);
 }
 
 .btnprojetos {
@@ -427,6 +446,7 @@ form * {
 
 .competenciasSpace {
     padding: 2vw 15vw;
+    color: rgb(218, 217, 217);
 }
 
 .competencias {
@@ -446,8 +466,8 @@ form * {
 /* ----------- footer ----------- */
 
 footer {
-    background-color: #ffffff;
-    color: #333;
+    background-color: rgb(21, 25, 32);
+    color: rgb(218, 217, 217);
     text-align: center;
     padding: 20px 0;
     bottom: 0;
@@ -601,6 +621,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgb(218, 217, 217);
 }
 
 .contact-form {
@@ -639,6 +660,25 @@ footer {
 @media screen and (max-width: 1000px) {
     /* Alterar a outra media query para 660 */
 
+    .heroImage {
+        display: flex;
+        color: #000000;
+        height: 92vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: rgb(218, 217, 217);
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        color: rgb(21, 25, 32);
+    }
 
     .imgtec {
         width: 15%;
@@ -745,7 +785,7 @@ footer {
 
     header {
         height: auto;
-        background: rgb(255, 255, 255);
+        background: rgb(21, 25, 32);
         color: rgb(0, 0, 0);
         top: 0;
         display: block;

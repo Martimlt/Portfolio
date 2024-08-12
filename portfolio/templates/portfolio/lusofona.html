@@ -20,7 +20,7 @@
   {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 1 %}
   <div>
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></b>
+        ><i class="fa-solid fa-link button2"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
     {% if licenciatura.semestre == 1 %}
     <p>{{ licenciatura.semestre }}st semester</p>
@@ -31,13 +31,13 @@
     <p><b>Professor:</b> {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} 
       {% if not licenciatura.professor.linkedin == 'https://www.none.com' %}
       <a href={{ licenciatura.professor.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
       {% endif %}
     </p>
     {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin and not licenciatura.professorAuxiliar.primeiroNome == 'None' %}
     <p><b>Teacher Assistant:</b> {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
     {% endif %}
   </div>
@@ -49,7 +49,7 @@
   {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 2 %}
   <div>
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></b>
+        ><i class="fa-solid fa-link button2"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
     {% if licenciatura.semestre == 1 %}
     <p>{{ licenciatura.semestre }}st semester</p>
@@ -58,12 +58,12 @@
     {% endif %}
     <p><b>Ects:</b> {{ licenciatura.ects }}</p>
     <p><b>Professor:</b> {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} <a href={{ licenciatura.professor.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a> <a href={{ licenciatura.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></p>
+        ><i class="fa-solid fa-link button2"></i></a></p>
     {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin and not licenciatura.professorAuxiliar.primeiroNome == 'None' %}
     <p><b>Teacher Assistant:</b> {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
     {% endif %}
   </div>
@@ -74,7 +74,7 @@
   {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 3 %}
   <div>
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></b>
+        ><i class="fa-solid fa-link button2"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
     {% if licenciatura.semestre == 1 %}
     <p>{{ licenciatura.semestre }}st semester</p>
@@ -85,13 +85,13 @@
     <p><b>Professor:</b> {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} 
       {% if not licenciatura.professor.linkedin == 'https://www.none.com' %}
       <a href={{ licenciatura.professor.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
       {% endif %}
     </p>
   {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin and not licenciatura.professorAuxiliar.primeiroNome == 'None' %}
   <p><b>Teacher Assistant:</b> {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
-      ><i class="fa-brands fa-linkedin button1"></i
+      ><i class="fa-brands fa-linkedin button2"></i
     ></a>
   {% endif %}
   </div>
@@ -102,19 +102,19 @@
   {% for licenciatura in licenciaturas %} {% if licenciatura.ano == 4 %}
   <div>
     <b>{{ licenciatura.nome }} <a href={{ licenciatura.linklusofona }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></b>
+        ><i class="fa-solid fa-link button2"></i></a></b>
     <p>{{ licenciatura.descricao }}</p>
     <p><b>Ects:</b> {{ licenciatura.ects }}</p>
     <p><b>Professor:</b> {{ licenciatura.professor.primeiroNome }} {{ licenciatura.professor.ultimoNome }} 
       {% if not licenciatura.professor.linkedin == 'https://www.none.com' %}
       <a href={{ licenciatura.professor.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
       {% endif %}
     </p>
     {% if not licenciatura.professor.linkedin == licenciatura.professorAuxiliar.linkedin and not licenciatura.professorAuxiliar.primeiroNome == 'None' %}
     <p><b>Teacher Assistant:</b> {{ licenciatura.professorAuxiliar.primeiroNome }} {{ licenciatura.professorAuxiliar.ultimoNome }} <a href={{ licenciatura.professorAuxiliar.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
     {% endif %}
   </div>

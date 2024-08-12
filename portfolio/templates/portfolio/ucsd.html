@@ -29,9 +29,9 @@
       context.</p>
     <p><b>Units:</b> 4</p>
     <p><b>Professors:</b> Vincent R. Nijs <a href="https://rady.ucsd.edu/faculty-research/faculty/vincent-nijs.html" target="_blank"
-        ><i class="fa-solid fa-link button1"></i
+        ><i class="fa-solid fa-link button2"></i
       ></a> and Terrence August <a href="https://rady.ucsd.edu/faculty-research/faculty/terrence-august.html" target="_blank"
-      ><i class="fa-solid fa-link button1"></i></a>
+      ><i class="fa-solid fa-link button2"></i></a>
       </p>
   </div>
   <div>
@@ -42,7 +42,7 @@
       analytics.</p>
     <p><b>Units:</b> 2</p>
     <p><b>Professors:</b> Johan Perols <a href=https://www.linkedin.com/in/johanperols/ target="_blank"
-      ><i class="fa-brands fa-linkedin button1"></i></a>
+      ><i class="fa-brands fa-linkedin button2"></i></a>
       </p>
   </div>
   <div>
@@ -52,7 +52,7 @@
       finance, and operations.</p>
     <p><b>Units:</b> 4</p>
     <p><b>Professors:</b> Terrence August <a href="https://rady.ucsd.edu/faculty-research/faculty/terrence-august.html" target="_blank"
-      ><i class="fa-solid fa-link button1"></i></a>
+      ><i class="fa-solid fa-link button2"></i></a>
       </p>
   </div>
 </div>
@@ -61,18 +61,18 @@
   {% for mestrado in mestrados %} {% if mestrado.trimestre == 2 %}
   <div>
     <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></b>
+        ><i class="fa-solid fa-link button2"></i></a></b>
     <p>{{ mestrado.descricao }}</p>
     <p><b>Units:</b> {{ mestrado.units }}</p>
     <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }}
       {% if not mestrado.professor.linkedin == 'https://www.none.com' %}
       <a href={{ mestrado.professor.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
       {% endif %}
       {% if not mestrado.professor.outroLink == 'https://www.none.com' %}
       <a href={{ mestrado.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a>
+        ><i class="fa-solid fa-link button2"></i></a>
       {% endif %}
       </p>
   </div>
@@ -84,18 +84,18 @@
   {% with winter_val=True %}
   <div>
     <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></b>
+        ><i class="fa-solid fa-link button2"></i></a></b>
     <p>{{ mestrado.descricao }}</p>
     <p><b>Units:</b> {{ mestrado.units }}</p>
     <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }}
       {% if not mestrado.professor.linkedin == 'https://www.none.com' %}
       <a href={{ mestrado.professor.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
       {% endif %}
       {% if not mestrado.professor.outroLink == 'https://www.none.com' %}
       <a href={{ mestrado.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a>
+        ><i class="fa-solid fa-link button2"></i></a>
       {% endif %}
       </p>
   </div>
@@ -111,18 +111,18 @@
   {% with spring_val=True %}
   <div>
     <b>{{ mestrado.nome }} <a href={{ mestrado.linklusofona }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a></b>
+        ><i class="fa-solid fa-link button2"></i></a></b>
     <p>{{ mestrado.descricao }}</p>
     <p><b>Units:</b> {{ mestrado.units }}</p>
     <p><b>Professor:</b> {{ mestrado.professor.primeiroNome }} {{ mestrado.professor.ultimoNome }}
       {% if not mestrado.professor.linkedin == 'https://www.none.com' %}
       <a href={{ mestrado.professor.linkedin }} target="_blank"
-        ><i class="fa-brands fa-linkedin button1"></i
+        ><i class="fa-brands fa-linkedin button2"></i
       ></a>
       {% endif %}
       {% if not mestrado.professor.outroLink == 'https://www.none.com' %}
       <a href={{ mestrado.professor.outroLink }} target="_blank"
-        ><i class="fa-solid fa-link button1"></i></a>
+        ><i class="fa-solid fa-link button2"></i></a>
       {% endif %}
       </p>
   </div>
