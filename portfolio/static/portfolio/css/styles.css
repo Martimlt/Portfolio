@@ -345,6 +345,51 @@ main {
 }
 
 
+.achievements {
+    color: rgb(218, 217, 217);
+  }
+
+  .achievements-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3vw;
+    padding-bottom: 30px;
+  }
+
+  .achievement {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2vw;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: left;
+  }
+  
+  .achievement:hover {
+    transform: scale(1.1); /* Scales the box up slightly when hovered */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow for a "lifted" effect */
+  }
+
+  .achievement h3 {
+    font-size: 1.4em;
+    margin-bottom: 1vw;
+    color: #fa8f03;
+    text-align: center;
+  }
+
+
+  @media (max-width: 1024px) {
+    .achievements-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .achievements-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
 
 /* ----------- curso ------------ */
 
