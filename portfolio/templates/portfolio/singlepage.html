@@ -26,44 +26,43 @@
         ><i class="fa-brands fa-github button1"></i
       ></a>
     </div>
+    <div class="scroll-down">
+      <a href="#next-section"><i class="fa-solid fa-arrow-down"></i></a>
+    </div>
   </div>
 </section>
 <section>
   <h2 class="centerTitles" id="about" style="scroll-margin-top: 75px;">About</h2>
     <div class="padding">
-        <div class="text1apresentacao">
-            <div class="space1">
-                <h3>Who am I?</h3>
-                <p>Hi! My name is Martim Teixeira, and I'm a 21 years old guy from Portugal, venturing into the world of data with curiosity 
-                  and determination.</p>
-            </div>
-            <div>
-                <h3>What do I intend to do in the future?</h3>
-                <p>
-                  Post-Master's, my aim is to work in the U.S. in areas aligned with my interests and skills, such as Data Science, 
-                  Data Analysis, Machine Learning, or Software Development.
-                </p>
-            </div>
-        </div>
-        <div class="imgapresentacao">
-            <img src="{% static 'portfolio/images/228.JPG' %}"/>
-        </div>
-        <div class="text2apresentacao">
-            <div class="space2">
-                <h3>What am I doing now?</h3>
-                <p>
-                  Currently, I am pursuing a Master of Science in Business Analytics at the University of California, San Diego.
-                </p>
-            </div>
-            <div>
-                <h3>Goals:</h3>
-                <ul style="padding-left: 50px;">
-                    <li>Be better every day</li>
-                    <li>Learn more and more</li>
-                    <li>Be a helpful person</li>
-                </ul>
-            </div>
-        </div>
+      <div class="text1apresentacao">
+          <div class="space1">
+              <h3>Who am I?</h3>
+              <p>Hello! I'm Martim Teixeira, a 22-year-old data enthusiast from Portugal who loves using data to uncover insights.</p>
+          </div>
+          <div>
+              <h3>What do I intend to do in the future?</h3>
+              <p>
+                  My vision for the future is to work in the U.S., leveraging my strengths in Data Science, Analytics, and Machine Learning.
+                  I'm eager to take on challenges that drive lasting impact.
+              </p>
+          </div>
+      </div>
+      <div class="imgapresentacao">
+          <img src="{% static 'portfolio/images/228.png' %}"/>
+      </div>
+      <div class="text2apresentacao">
+          <div class="space2">
+              <h3>What am I doing now?</h3>
+              <p>
+                  I am currently finishing my MSc in Business Analytics at UCSD. Throughout this program, I've focused on applying data 
+                  science and machine learning to solve complex business challenges.
+              </p>
+          </div>
+          <div>
+              <h3>Professional Aspirations:</h3>
+              <p>I am committed to continuous growth, expanding my data science expertise, and supporting team success in a dynamic environment.</p>
+          </div>
+      </div>
     </div>
 </section>
 <div>
@@ -378,4 +377,26 @@
     </form>
   </div>
 </section>
+<script>
+document.querySelector('.scroll-down a').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent the default anchor behavior
+
+    // Get the "About" section to scroll to
+    const targetElement = document.querySelector('#about');
+
+    // Define the height of the header or the offset you want
+    const headerOffset = 90; // Adjust this value as needed
+
+    // Calculate the position to scroll to, considering the header offset
+    const elementPosition = targetElement.offsetTop;
+    const offsetPosition = elementPosition - headerOffset;
+
+    // Smoothly scroll to the adjusted position
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+});
+
+</script>
 {% endblock %}

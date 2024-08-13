@@ -111,10 +111,11 @@ main {
   
 #dynamic-text {
     overflow: hidden;
-    border-right: 0.15em solid black; /* The typewriter cursor */
+    border-right: 0.15em solid white; /* The typewriter cursor is now white */
     white-space: nowrap;
     animation: blink-caret 0.75s step-end infinite;
 }
+
 
 @keyframes blink-caret {
     50% { border-color: transparent; }
@@ -177,6 +178,34 @@ main {
     padding: 2vw 6vw 3vw;
 }
 
+.scroll-down {
+    position: absolute;
+    bottom: 20px; /* Position the arrow near the bottom of the hero section */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.scroll-down i {
+    font-size: 2em;
+    color: white;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+
+
 
 
 /* ---------- Apresentação ------------ */
@@ -207,12 +236,12 @@ main {
 }
 
 .space1 {
-    margin-bottom: 6vw;
+    margin-bottom: 5vw;
 }
 
 .space2 {
-    margin-top: 5vw;
-    margin-bottom: 5vw;
+    margin-top: 4vw;
+    margin-bottom: 3vw;
 }
 
 .hobbies {
