@@ -212,7 +212,7 @@ main {
 
 .padding {
     display: flex;
-    padding: 1vw 8vw 2vw 8vw;
+    padding: 1vw 8vw 1vw 8vw;
     color: rgb(218, 217, 217);
 }
 
@@ -243,6 +243,43 @@ main {
     margin-top: 4vw;
     margin-bottom: 3vw;
 }
+
+
+.job-search {
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background to distinguish the section */
+    text-align: center;
+    color: rgb(218, 217, 217);
+}
+
+.job-search h3 {
+    font-size: 1.8em;
+    margin-bottom: 1vw;
+}
+
+.job-search p {
+    font-size: 1.2em;
+    margin-bottom: 1.5vw;
+}
+
+.job-search .btn {
+    background-color: #fa8f03;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1em;
+    margin: 0px !important;
+    opacity: 1;
+    transition: 0.3s;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.job-search .btn:hover {
+    opacity: 0.8;
+}
+
 
 .hobbies {
     display: flex;
