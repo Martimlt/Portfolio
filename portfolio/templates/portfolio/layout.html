@@ -5,7 +5,10 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="author" content="Martim Teixeira" />
-      <link rel="shortcut icon" type="image/x-icon" href="{% static 'portfolio/images/Logo.png' %}" />
+      <!-- Light mode favicon -->
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'portfolio/images/Logo.png' %}" media="(prefers-color-scheme: light)" />
+      <!-- Dark mode favicon -->
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'portfolio/images/Logo-dark.png' %}" media="(prefers-color-scheme: dark)" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
