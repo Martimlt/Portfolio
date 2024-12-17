@@ -94,6 +94,34 @@
     <a href="#contact"><button class="btn">Contact Me</button></a>
   </div>
 </div>
+<h2 class="centerTitles">Technical Skills</h2>
+<div class="skills-section">
+    <div class="skill-item">
+        <i class="fab fa-python"></i> Python
+    </div>
+    <div class="skill-item">
+        <i class="fas fa-database"></i> SQL
+    </div>
+    <div class="skill-item">
+        <i class="fas fa-chart-bar"></i> Power BI
+    </div>
+    <div class="skill-item">
+        <i class="fas fa-code"></i> Django
+    </div>
+    <div class="skill-item">
+        <i class="fas fa-table"></i> Tableau
+    </div>
+</div>
+<h2 class="centerTitles">Analytical & Professional Skills</h2>
+<div class="skills-section">
+    <div class="skill-badge">Data Analysis</div>
+    <div class="skill-badge">Machine Learning</div>
+    <div class="skill-badge">Statistical Analysis</div>
+    <div class="skill-badge">A/B Testing</div>
+    <div class="skill-badge">Agile Methodologies</div>
+    <div class="skill-badge">Problem-Solving</div>
+    <div class="skill-badge">Communication</div>
+</div>
 <div>
   <h2 class="centerTitles">Languages</h2>
   <div class="languages">
@@ -283,20 +311,8 @@
     </div>
   </div>
 </section>
-<h2 class="centerTitles">Skills</h2>
-<div class="competenciasSpace">
-    {% for competencia in competencias %}
-        <p>{{ competencia.competencia }}</p>
-        <div class="competencias">
-            <div class="skills {{ competencia.competencia }}" style="width: {{ competencia.valor }}%;background-color: #fa8f03;">{{ competencia.valor }}%</div>
-        </div>
-    {% endfor %}
 </div>
-<h3 class="centerTitles">Some other skills...</h3>
-<div>
-  
-</div>
-<h2 class="centerTitles" id="projects" style="scroll-margin-top: 75px;">Projects</h2>
+<h2 class="centerTitles" id="projects" style="scroll-margin-top: 75px; margin-top: 1rem;">Projects</h2>
 <div class="projetos" id="projectsContainer">
   <div class="separadoresEsquerda" id="project1">
     <div class="imgprojeto">
@@ -314,7 +330,7 @@
         <p><b>Team mates:</b> Apoorav Sharma, Lakshay Chopra, Phalguni Kamani</p>
         <p><b>Used Technologies:</b> Python, Machine Learning</p>
     </div>
-</div>
+  </div>
   <div class="separadoresDireita" id="project2">
     <div class="imgprojeto">
         <img src="{% static 'portfolio/images/AUD.png' %}"/>
@@ -456,6 +472,5 @@ document.querySelector('.scroll-down a').addEventListener('click', function(e) {
         behavior: 'smooth'
     });
 });
-
 </script>
 {% endblock %}

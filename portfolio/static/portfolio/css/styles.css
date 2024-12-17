@@ -250,6 +250,7 @@ main {
     background-color: rgba(255, 255, 255, 0.1); /* Subtle background to distinguish the section */
     text-align: center;
     color: rgb(218, 217, 217);
+    margin: 1rem;
 }
 
 .job-search h3 {
@@ -605,23 +606,43 @@ form * {
 
 /* ----------- Competências ------------- */
 
-.competenciasSpace {
-    padding: 2vw 15vw;
-    color: rgb(218, 217, 217);
+/* Section Styling */
+.skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem;
 }
 
-.competencias {
-    width: 100%;
-    background-color: #ddd;
+.skill-item {
+    background-color: #2c2c2c;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
 }
 
-.skills {
-    text-align: right;
-    padding-top: 0.3vw;
-    padding-bottom: 0.3vw;
-    padding-right: 0.3vw;
-    color: white;
+.skill-item i {
+    color: #fa8f03;
+    font-size: 1.5rem;
 }
+
+/* Badge Style for Analytical Skills */
+.skill-badge {
+    background-color: #fa8f03;
+    color: #2c2c2c;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
 
 
 /* ----------- footer ----------- */
