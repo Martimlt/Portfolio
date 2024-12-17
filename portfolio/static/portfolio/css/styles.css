@@ -250,7 +250,7 @@ main {
     background-color: rgba(255, 255, 255, 0.1); /* Subtle background to distinguish the section */
     text-align: center;
     color: rgb(218, 217, 217);
-    margin: 0 1rem;
+    margin: 1rem 0;
 }
 
 .job-search h3 {
