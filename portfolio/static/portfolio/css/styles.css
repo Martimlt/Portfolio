@@ -236,11 +236,11 @@ main {
 }
 
 .space1 {
-    margin-bottom: 5vw;
+    margin-bottom: 3vw;
 }
 
 .space2 {
-    margin-top: 4vw;
+    margin-top: 2vw;
     margin-bottom: 3vw;
 }
 
@@ -374,6 +374,10 @@ main {
     font-size: 1.4em;
     margin-bottom: 1vw;
     color: #fa8f03;
+    text-align: center;
+  }
+
+  .achievement p {
     text-align: center;
   }
 
