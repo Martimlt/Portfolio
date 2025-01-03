@@ -255,12 +255,14 @@ main {
 
 .job-search h3 {
     font-size: 1.8em;
-    margin-bottom: 1vw;
+    margin-bottom: 15px;
 }
 
 .job-search p {
     font-size: 1.2em;
-    margin-bottom: 1.5vw;
+    margin-bottom: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .job-search .btn {
@@ -310,7 +312,7 @@ main {
     text-align: center;
     transition: transform 0.3s ease-in-out;
     max-width: 200px; /* Optional: Limit the maximum width */
-    margin: 10px;
+    margin: 15px;
 }
 
 .language img {
@@ -382,16 +384,50 @@ main {
   }
 
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1075px) {
     .achievements-container {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    .achievement h3 {
+        font-size: 1.4em;
+        margin-bottom: 1vw;
+        color: #fa8f03;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+      }
+    
+      .achievement p {
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+      }
   }
 
   @media (max-width: 700px) {
     .achievements-container {
       grid-template-columns: 1fr;
     }
+
+    .achievement h3 {
+        font-size: 1.4em;
+        margin-bottom: 1vw;
+        color: #fa8f03;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+      }
+    
+      .achievement p {
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+      }
   }
 
 
@@ -843,7 +879,7 @@ footer {
 
 /* -------------- media query -------------- */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
     /* Alterar a outra media query para 660 */
 
     .heroImage {
@@ -943,7 +979,7 @@ footer {
     .separadoresEsquerda {
         display: grid;
         flex-flow: row wrap;
-        padding-bottom: 2vw;
+        padding-bottom: 25px;
         justify-content: center;
         text-align: center;
     }
@@ -951,7 +987,7 @@ footer {
     .separadoresDireita {
         display: grid;
         flex-flow: row wrap;
-        padding-bottom: 2vw;
+        padding-bottom: 25px;
         justify-content: center;
         text-align: center;
     }
@@ -1027,7 +1063,7 @@ footer {
 
     .content {
         padding: 20px 30px;
-        width: 70vw;
+        width: 75vw;
         background-color: white;
         position: relative;
         border-radius: 6px;
