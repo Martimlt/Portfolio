@@ -354,84 +354,50 @@ main {
     color: rgb(218, 217, 217);
   }
 
-  .achievements-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3vw;
-    padding-bottom: 30px;
-  }
+.achievements-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* aligns items at the top if height varies */
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 20px 0 30px 0;
+}
 
-  .achievement {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2vw;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-align: left;
-  }
-  
-  .achievement:hover {
-    transform: scale(1.1); /* Scales the box up slightly when hovered */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow for a "lifted" effect */
-  }
+.achievement {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  height: 100%;
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-align: center;
+}
 
-  .achievement h3 {
-    font-size: 1.4em;
-    margin-bottom: 1vw;
-    color: #fa8f03;
-    text-align: center;
-  }
+.achievement:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.25);
+}
 
-  .achievement p {
-    text-align: center;
-  }
+.achievement h3 {
+  font-size: 1.15em;
+  margin-bottom: 1rem;
+  color: #fa8f03;
+  text-align: center;
+}
 
-
-  @media (max-width: 1075px) {
-    .achievements-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .achievement h3 {
-        font-size: 1.4em;
-        margin-bottom: 1vw;
-        color: #fa8f03;
-        text-align: center;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 10px;
-      }
-    
-      .achievement p {
-        text-align: center;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-      }
-  }
-
-  @media (max-width: 700px) {
-    .achievements-container {
-      grid-template-columns: 1fr;
-    }
-
-    .achievement h3 {
-        font-size: 1.4em;
-        margin-bottom: 1vw;
-        color: #fa8f03;
-        text-align: center;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 20px;
-      }
-    
-      .achievement p {
-        text-align: center;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-      }
-  }
-
+.achievement p {
+  text-align: center;
+  color: rgb(218, 217, 217);
+  font-size: 1em;
+}
 
 
 /* ----------- curso ------------ */
