@@ -9,6 +9,17 @@ html {
     scroll-behavior: smooth;
 }
 
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .centerTitles {
     padding: 1vw 0vw;
     margin: 0px;
@@ -33,8 +44,8 @@ html {
 /* ------------ header -------------- */
 
 header {
-    height: 10vh;
-    background: rgb(21, 25, 32);    
+    height: 64px;
+    background: rgb(21, 25, 32);
     color: rgb(255, 255, 255);
     top: 0;
     display: flex;
@@ -90,32 +101,61 @@ main {
 
 /* ---------- Home ----------- */
 
+
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
 .heroImage {
     display: flex;
-    color: #000000;
-    height: 90vh;
+    height: calc(100vh - 64px);
+    height: calc(100svh - 64px);
     align-items: center;
     justify-content: center;
     text-align: center;
     color: rgb(218, 217, 217);
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: heroFadeUp 0.9s ease both;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.heroImage h2 {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.4em;
 }
 
 .heroImage span:nth-child(1) {
-    font-size: 2em;
+    font-size: 1em;
+}
+
+.hero-subtitle {
+    font-size: 1.15em;
+    color: rgba(218, 217, 217, 0.65);
+    margin-bottom: 0.6em;
+    letter-spacing: 0.03em;
 }
 
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
-  }
-  
-#dynamic-text {
-    overflow: hidden;
-    border-right: 0.15em solid white; /* The typewriter cursor is now white */
-    white-space: nowrap;
-    animation: blink-caret 0.75s step-end infinite;
 }
 
+#dynamic-text {
+    border-right: 0.15em solid #fa8f03;
+    animation: blink-caret 0.75s step-end infinite;
+    color: #fa8f03;
+    font-size: 0.6em;
+}
 
 @keyframes blink-caret {
     50% { border-color: transparent; }
@@ -156,20 +196,24 @@ main {
 /* Botão */
 
 .btn {
-    background-color: #dadada;
+    background-color: #fa8f03;
     border: none;
-    color: rgb(50, 50, 50);
-    padding: 10px 20px;
+    color: #fff;
+    padding: 12px 28px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     margin: 10px 0px;
     opacity: 1;
     transition: 0.3s;
-    border-radius: 10px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .btn:hover {
-    opacity: 0.7
+    opacity: 0.85;
+    transform: translateY(-2px);
 }
 
 .textDown {
@@ -210,40 +254,76 @@ main {
 
 
 
-/* ---------- Apresentação ------------ */
+/* ---------- About ------------ */
 
-.padding {
+.about-section {
+    padding: 0 0 2rem;
+}
+
+.about-wrapper {
     display: flex;
-    padding: 1vw 8vw 1vw 8vw;
+    align-items: center;
+    gap: 3rem;
+    padding: 1.5rem 12vw;
     color: rgb(218, 217, 217);
 }
 
+.about-photo {
+    flex-shrink: 0;
+}
 
-.padding>* {
+.about-photo img {
+    width: 280px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.about-text {
     flex: 1;
 }
 
-.padding div {
-    padding: 1.2vw 1.5vw;
+.about-text h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
 }
 
-.imgapresentacao {
-    text-align: center;
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(218, 217, 217, 0.85);
+    margin-bottom: 0.9rem;
 }
 
-
-.padding img {
-    border-radius: 5px;
-
+.about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
 }
 
-.space1 {
-    margin-bottom: 3vw;
+.about-tags span {
+    background-color: rgba(250, 143, 3, 0.15);
+    border: 1px solid rgba(250, 143, 3, 0.4);
+    color: #fa8f03;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
 }
 
-.space2 {
-    margin-top: 2vw;
-    margin-bottom: 3vw;
+@media screen and (max-width: 700px) {
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-tags {
+        justify-content: center;
+    }
 }
 
 
@@ -286,67 +366,117 @@ main {
 }
 
 
-.hobbies {
+/* ----------- Skills grid ----------- */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem 8vw 2rem;
+}
+
+.skills-group {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+}
+
+.skills-group-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fa8f03;
+    margin-bottom: 0.9rem;
+}
+
+.skills-list {
+    list-style: none;
     display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 3em;
-    padding: 2vw 2vw 3vw;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.skills-list li {
+    font-size: 0.97rem;
     color: rgb(218, 217, 217);
-}
-
-.hobbies p {
-    font-size: 0.5em;
-}
-
-.languages {
     display: flex;
-    text-align: center;
     align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap; /* Allow wrapping to the next line */
-    padding: 2vw 2vw 3vw;
-    color: rgb(218, 217, 217);
+    gap: 0.6rem;
 }
 
-.language {
+.skills-list li i {
+    color: #fa8f03;
+    width: 16px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
-    max-width: 200px; /* Optional: Limit the maximum width */
-    margin: 15px;
+    font-size: 0.9rem;
 }
 
-.language img {
-    width: 150px;
+/* ----------- Personal row (languages + hobbies) ----------- */
+
+.personal-row {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0 8vw 2.5rem;
+}
+
+.personal-block {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+}
+
+.languages-inline {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.language-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgb(218, 217, 217);
+    font-size: 0.97rem;
+}
+
+.language-inline img {
+    width: 32px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
-.language:hover {
-    transform: scale(1.1);
+.hobbies-inline {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
-.language b {
-    display: block;
-    margin-top: 0.5vw;
-    font-size: 1.6em;
-    color: #fff;
+.hobbies-inline div {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgb(218, 217, 217);
+    font-size: 0.97rem;
 }
 
-.language {
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.hobbies-inline i {
+    color: #fa8f03;
+    font-size: 1.1rem;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 700px) {
-    .languages {
-        flex-direction: column; /* Stack languages vertically */
-        align-items: center;
+@media screen and (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 4vw 2rem;
     }
 
+    .personal-row {
+        flex-direction: column;
+        padding: 0 4vw 2.5rem;
+    }
 }
 
 
@@ -364,7 +494,7 @@ main {
 }
 
 .achievement {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(21, 25, 32);
   border-radius: 10px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
@@ -386,17 +516,31 @@ main {
   box-shadow: 0px 6px 20px rgba(0,0,0,0.25);
 }
 
-.achievement h3 {
-  font-size: 1.15em;
-  margin-bottom: 1rem;
+.achievement-rank {
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #fa8f03;
-  text-align: center;
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
 
-.achievement p {
-  text-align: center;
+.achievement-rank span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(180, 180, 180);
+}
+
+.achievement-title {
+  font-size: 1rem;
+  font-weight: 700;
   color: rgb(218, 217, 217);
-  font-size: 1em;
+  margin-bottom: 0.4rem;
+}
+
+.achievement-desc {
+  font-size: 0.9rem;
+  color: rgb(160, 160, 160);
+  line-height: 1.5;
 }
 
 
@@ -460,6 +604,12 @@ main {
     text-decoration: none;
 }
 
+.timeline-toggle {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.9em;
+}
+
 .desporto {
     display: flex;
     text-align: center;
@@ -476,180 +626,304 @@ main {
     font-size: 0.3em;
 }
 
-/* Percurso */
+/* ----------- Timeline ----------- */
 
-/* The actual timeline (the vertical ruler) */
 .timeline {
     position: relative;
-    max-width: 1250px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 1rem 0 2rem;
 }
 
-/* The actual timeline (the vertical ruler) */
 .timeline::after {
     content: '';
     position: absolute;
-    width: 6px;
-    background-color: white;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, #fa8f03 8%, rgba(255,255,255,0.15) 92%, transparent);
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -3px;
-    margin-bottom: 5px;
+    transform: translateX(-50%);
 }
 
-/* Container around content */
 .percurso {
-    padding: 10px 40px;
+    padding: 0.5rem 3rem 1.5rem;
     position: relative;
-    background-color: inherit;
     width: 50%;
 }
 
-/* The circles on the timeline */
+/* Dot on the line */
 .percurso::after {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #fa8f03;
-    top: 15px;
+    width: 10px;
+    height: 10px;
+    right: -5px;
+    background-color: #fa8f03;
     border-radius: 50%;
+    top: 1.1rem;
     z-index: 1;
+    box-shadow: 0 0 0 3px rgba(250, 143, 3, 0.2);
 }
 
-/* Place the container to the left */
 .left {
     left: 0;
 }
 
-/* Place the container to the right */
 .right {
     left: 50%;
 }
 
-/* Add arrows to the left container (pointing right) */
-.left::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    right: 30px;
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right container (pointing left) */
+.left::before,
 .right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    content: none;
 }
 
-/* Fix the circle for containers on the right side */
 .right::after {
-    left: -16px;
+    left: -5px;
 }
 
-/* The actual content */
 .content {
-    padding: 20px 30px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
+    padding: 1.1rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    transition: border-color 0.2s;
 }
 
-.content h2 {
-    padding: 0;
+.content:hover {
+    border-color: rgba(250, 143, 3, 0.35);
 }
 
-/* ----------- Projetos ------------ */
-
-.projetos {
-    padding: 3vw 10vw;
-}
-
-.separadoresEsquerda {
-    display: flex;
-    padding-bottom: 2vw;
-    justify-content: center;
-    align-items: center;
-}
-
-.separadoresDireita {
-    display: flex;
-    padding-bottom: 2vw;
-    justify-content: center;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-.textCompetencias {
-    padding: 1vw;
+.tl-title {
+    font-size: 1.3rem;
+    font-weight: 700;
     color: rgb(218, 217, 217);
+    margin-bottom: 0.25rem;
+}
+
+.tl-meta {
+    font-size: 1rem;
+    color: rgba(218, 217, 217, 0.55);
+    margin-bottom: 0.75rem;
+}
+
+.tl-body {
+    font-size: 1rem;
+    color: rgba(218, 217, 217, 0.8);
+    margin-top: 0.4rem;
+}
+
+.tl-list {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.tl-list li {
+    font-size: 1rem;
+    color: rgba(218, 217, 217, 0.85);
+    line-height: 1.6;
+    margin-bottom: 0.4rem;
+}
+
+.tl-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background-color: #fa8f03;
+    color: #fff;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+    vertical-align: middle;
+    margin-left: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ----------- Projects ------------ */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem 8vw 1rem;
+}
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card-body {
+    padding: 1.2rem 1.4rem 1.4rem;
+    color: rgb(218, 217, 217);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-card-body h3 {
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+}
+
+.project-card-body p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    flex: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+}
+
+.project-tags span {
+    background-color: #fa8f03;
+    color: #1e232e;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+}
+
+.project-card--hidden {
+    display: none;
 }
 
 .btnprojetos {
     text-align: center;
 }
 
-form * {
-    padding: 5px
+/* ------------ Contact ------------ */
+
+.contact-section {
+    padding: 2rem 0 4rem;
 }
 
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
+    padding: 0 4vw;
+    color: rgb(218, 217, 217);
+}
+
+.contact-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.contact-info > p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.contact-info-item i {
+    color: #fa8f03;
+    width: 18px;
+    text-align: center;
+}
+
+.contact-socials {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgb(180, 180, 180);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: rgb(218, 217, 217);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #fa8f03;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+    padding: 0.65rem 1.8rem;
+    font-size: 0.95rem;
+}
+
+@media screen and (max-width: 700px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* https: //codepen.io/voltagenewmedia/pen/aWKxOg */
 
-/* ----------- Competências ------------- */
-
-/* Section Styling */
-.skills-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 1.5rem;
-}
-
-.skill-item {
-    background-color: #2c2c2c;
-    color: #fff;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.skill-item i {
-    color: #fa8f03;
-    font-size: 1.5rem;
-}
-
-/* Badge Style for Analytical Skills */
-.skill-badge {
-    background-color: #fa8f03;
-    color: #2c2c2c;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-}
 
 
 
@@ -781,66 +1055,6 @@ footer {
 
 /* ------------ Contactos ------------ */
 
-.paddingcontactos {
-    padding: 5vw 0vw;
-}
-
-.spacecontactos {
-    height: 90vh;
-}
-
-.contactos {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 3em;
-    padding: 2vw 2vw 3vw;
-}
-
-.contactos p {
-    font-size: 0.5em;
-}
-
-.spacebetweencontactos {
-    padding-left: 12vw;
-    padding-right: 13vw;
-}
-
-.contact-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(218, 217, 217);
-}
-
-.contact-form {
-  width: 100%;
-  max-width: 500px; /* Adjust this as needed */
-  padding: 20px;
-  box-sizing: border-box;
-  margin: auto;
-  text-align: center; /* Center aligns text */
-}
-
-.contact-form p {
-  margin: 0 auto 10px; /* Centers the <p> elements (field labels) */
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  display: block;
-  width: 100%; /* Makes inputs take full width */
-  margin: 0 auto; /* Centers the inputs */
-  /* Add any additional styles for inputs (e.g., padding, border) */
-}
-
-.contact-form button {
-  display: block;
-  margin: 10px auto; /* Centers the button */
-  /* Add any additional styles for the button (e.g., padding, background) */
-}
 
   
 
@@ -850,14 +1064,18 @@ footer {
 @media screen and (max-width: 1100px) {
     /* Alterar a outra media query para 660 */
 
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        padding: 2rem 4vw 1rem;
+    }
+
     .heroImage {
-        display: flex;
-        color: #000000;
-        height: 92vh;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: rgb(218, 217, 217);
+        height: calc(100vh - 64px);
+        height: calc(100svh - 64px);
+    }
+
+    .heroImage h2 {
+        font-size: 2em;
     }
 
     .topnav a {
@@ -944,35 +1162,6 @@ footer {
 }
 
 @media screen and (max-width: 1100px) {
-    .separadoresEsquerda {
-        display: grid;
-        flex-flow: row wrap;
-        padding-bottom: 25px;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .separadoresDireita {
-        display: grid;
-        flex-flow: row wrap;
-        padding-bottom: 25px;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .imgprojeto {
-        display: flex; /* Use flexbox for alignment */
-        justify-content: center; /* Horizontally center the child */
-        align-items: center; /* Vertically center the child (if needed) */
-    }
-
-    .imgprojeto img {
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto; /* Centers the image within the flex container */
-    }
-    
-
     header {
         height: auto;
         background: rgb(21, 25, 32);
@@ -1029,73 +1218,23 @@ footer {
 
 @media screen and (max-width: 800px) {
 
-    .content {
-        padding: 20px 30px;
-        width: 75vw;
-        background-color: white;
-        position: relative;
-        border-radius: 6px;
-    }
-
-    /* Container around content */
-    .percurso {
-        padding: 10px 50px;
-        position: relative;
-        background-color: inherit;
-        width: 50%;
-    }
-
-    .left::before {
-        content: " ";
-        height: 0;
-        position: absolute;
-        top: 22px;
-        width: 0;
-        z-index: 1;
-        left: 30px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
-    }
-
-    /* Place the timelime to the left */
     .timeline::after {
-        left: 31px;
+        left: 20px;
     }
 
-    /* Full-width containers */
-    .container {
+    .percurso {
         width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
+        padding-left: 50px;
+        padding-right: 1rem;
     }
 
-    /* Make sure that all arrows are pointing leftwards */
-    .container::before {
-        left: 60px;
-        border: medium solid white;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
-    }
-
-    /* Make sure all circles are at the same spot */
     .left::after,
     .right::after {
         left: 15px;
     }
 
-    /* Make all right containers behave like the left ones */
     .right {
-        left: 0%;
-    }
-
-    .containerNoticias div {
-        width: 60vw;
-        padding: 20px;
-        margin: 10px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 5px 5px 15px grey;
+        left: 0;
     }
 
     .videodef {

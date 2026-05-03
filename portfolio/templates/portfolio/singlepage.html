@@ -1,494 +1,393 @@
 {% extends 'portfolio/layout.html' %} {% block main %}
 {% load static %}
 <section class="heroImage">
-  <div>
+  <div class="hero-content">
     {% if user.is_authenticated %}
     <p>Bem vindo <b>{{ user.username }}</b>
     {% else %} {% endif %}
     <h2><span>Martim Teixeira.</span> <span id="dynamic-text"></span></h2>
+    <p class="hero-subtitle">AI Solutions Engineer · San Diego</p>
     <div>
-      {% load static %}
       <a
         href="{% static 'portfolio/images/Resume_Martim_Teixeira.pdf' %}"
         download
         ><button class="btn">Download Resume</button></a>
     </div>
     <div class="iconsHome">
-      {% load static %}
       <a href="https://www.linkedin.com/in/martim-teixeira/" target="_blank"
         ><i class="fa-brands fa-linkedin button2"></i
-      ></a>
-      <a href="https://www.instagram.com/mteixeira_3/" target="_blank"
-        ><i class="fa-brands fa-instagram button2"></i
       ></a>
       <a href="https://github.com/Martimlt" target="_blank"
         ><i class="fa-brands fa-github button2"></i
       ></a>
     </div>
-    <div class="scroll-down">
-      <a href="#next-section"><i class="fa-solid fa-arrow-down"></i></a>
-    </div>
+  </div>
+  <div class="scroll-down">
+    <a href="#about"><i class="fa-solid fa-arrow-down"></i></a>
   </div>
 </section>
-<section>
-  <h2 class="centerTitles" id="about" style="scroll-margin-top: 75px;">About</h2>
-    <div class="padding">
-      <div class="text1apresentacao">
-          <div class="space1">
-              <h3>Who am I?</h3>
-              <p>Hello! I'm Martim, an AI Engineer and Data Scientist specializing in building automation systems and AI/ML-based solutions that drive efficiency and innovation.</p>
-          </div>
-          <div>
-              <h3>What am I doing now?</h3>
-              <p>
-                Currently I work as an AI Solutions Engineer, designing and deploying AI-driven solutions and automation systems by I leveraging Generative AI and LLMs to create value for the business and the customers.
-              </p>
-          </div>
-      </div>
-      <div class="imgapresentacao">
-          <img src="{% static 'portfolio/images/228.png' %}"/>
-      </div>
-      <div class="text2apresentacao">
-          <div class="space2">
-              <h3>What are some of my skills?</h3>
-              <p>
-                Experienced in designing AI-powered solutions, implementing machine learning models, and automate processes. 
-                Proficient in Python, SQL, LangChain, and cloud technologies, with hands-on expertise in AI agents, FastAPI, and end-to-end ML solutions.
-              </p>
-          </div>
-          <div>
-              <h3>What drives me?</h3>
-              <p>I thrive on bringing AI into real-world applications and automating complex processes, always looking for efficiency improvements.</p>
-          </div>
+<section class="about-section">
+  <h2 class="centerTitles" id="about" style="scroll-margin-top: 70px;">About</h2>
+  <div class="about-wrapper">
+    <div class="about-photo">
+      <img src="{% static 'portfolio/images/228.png' %}" alt="Martim Teixeira"/>
+    </div>
+    <div class="about-text">
+      <h3>AI Solutions Engineer based in San Diego.</h3>
+      <p>I build production AI systems — chatbots, automation pipelines, and LLM infrastructure — that create real, measurable business impact. I care about shipping things that work, not just prototypes.</p>
+      <p>Currently at <a href="https://cymbiotika.com/" target="_blank" class="link">Cymbiotika</a>, where I've shipped an AI Wellness Assistant that cut response time by 90%, a content-generation pipeline that replaced an $80K/yr role, and a full-stack AI Studio for monitoring and evaluating production AI — all from scratch.</p>
+      <p>Previously a Data Scientist at Mazda and a Teaching Assistant at UC San Diego, where I completed my MSc in Business Analytics.</p>
+      <div class="about-tags">
+        <span>Agentic AI</span>
+        <span>LLMs</span>
+        <span>Python</span>
+        <span>RAG</span>
+        <span>Fine-Tuning</span>
+        <span>Data Science</span>
       </div>
     </div>
+  </div>
 </section>
 <section class="achievements">
-  <h2 class="centerTitles" id="achievements" style="scroll-margin-top: 75px;">Achievements</h2>
-  <div class="achievements-container padding">
+  <h2 class="centerTitles" id="achievements" style="scroll-margin-top: 70px;">Achievements</h2>
+  <div class="achievements-container">
     <div class="achievement">
-      <h3>8<sup>th</sup> out of 600</h3>
-      <h3>UCSD Data Science Competition</h3>
-      <p>Predict user game engagement and time played.</p>
+      <p class="achievement-rank">8<sup>th</sup> <span>/ 600</span></p>
+      <h3 class="achievement-title">UCSD Data Science Competition</h3>
+      <p class="achievement-desc">Predict user game engagement and time played.</p>
     </div>
     <div class="achievement">
-      <h3>7<sup>th</sup> out of 45</h3>
-      <h3>Analyzing Unstructured Data Competition</h3>
-      <p>Predict restaurant types based on reviews.</p>
+      <p class="achievement-rank">7<sup>th</sup> <span>/ 45</span></p>
+      <h3 class="achievement-title">Analyzing Unstructured Data Competition</h3>
+      <p class="achievement-desc">Predict restaurant types based on reviews.</p>
     </div>
   </div>
 </section>
-<h2 class="centerTitles">Technical Skills</h2>
-<div class="skills-section">
-    <div class="skill-item"><i class="fab fa-python"></i> Python (Advanced)</div>
-    <div class="skill-item"><i class="fas fa-code"></i> LangChain</div>
-    <div class="skill-item"><i class="fas fa-cogs"></i> LLMs</div>
-    <div class="skill-item"><i class="fas fa-brain"></i> Pydantic</div>
-    <div class="skill-item"><i class="fas fa-chart-line"></i> Agents sdk</div>
-    <div class="skill-item"><i class="fas fa-database"></i> SQL (Advanced)</div>
-    <div class="skill-item"><i class="fas fa-chart-line"></i> Power BI (Advanced)</div>
-    <div class="skill-item"><i class="fas fa-code"></i> PySpark</div>
-    <div class="skill-item"><i class="fas fa-database"></i> Microsoft SQL Server</div>
-    <div class="skill-item"><i class="fas fa-code-branch"></i> Git</div>
-    <div class="skill-item"><i class="fas fa-project-diagram"></i> Django</div>
-    <div class="skill-item"><i class="fas fa-microchip"></i> Generative AI</div>
-    <div class="skill-item"><i class="fas fa-cloud"></i>AWS</div>
-    <div class="skill-item"><i class="fas fa-code"></i> HTML & CSS</div>
-    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+<h2 class="centerTitles">Skills</h2>
+<div class="skills-grid">
+  <div class="skills-group">
+    <h4 class="skills-group-title">AI & LLMs</h4>
+    <ul class="skills-list">
+      <li><i class="fas fa-brain"></i> LLMs</li>
+      <li><i class="fas fa-code"></i> LangChain</li>
+      <li><i class="fas fa-robot"></i> Agentic AI</li>
+      <li><i class="fas fa-search"></i> RAG & VectorDB</li>
+      <li><i class="fas fa-sliders-h"></i> Fine-Tuning</li>
+      <li><i class="fas fa-comment-dots"></i> Prompt Engineering</li>
+      <li><i class="fas fa-brain"></i> Pydantic</li>
+      <li><i class="fas fa-microchip"></i> Hugging Face</li>
+      <li><i class="fas fa-balance-scale"></i> LLM-as-Judge / Evals</li>
+    </ul>
+  </div>
+  <div class="skills-group">
+    <h4 class="skills-group-title">Data & Tools</h4>
+    <ul class="skills-list">
+      <li><i class="fab fa-python"></i> Python</li>
+      <li><i class="fas fa-database"></i> SQL & PostgreSQL</li>
+      <li><i class="fas fa-plug"></i> RESTful APIs & MCP</li>
+      <li><i class="fab fa-docker"></i> Docker</li>
+      <li><i class="fab fa-aws"></i> AWS (Lambda, S3, EC2)</li>
+      <li><i class="fas fa-stream"></i> Celery & RabbitMQ</li>
+      <li><i class="fas fa-memory"></i> Redis</li>
+      <li><i class="fas fa-code-branch"></i> Git</li>
+    </ul>
+  </div>
+  <div class="skills-group">
+    <h4 class="skills-group-title">Domain Skills</h4>
+    <ul class="skills-list">
+      <li><i class="fas fa-flask"></i> Data Science & ML</li>
+      <li><i class="fas fa-cogs"></i> AI-Powered Automation</li>
+      <li><i class="fas fa-vial"></i> A/B Testing</li>
+      <li><i class="fas fa-chart-line"></i> Statistical Analysis</li>
+      <li><i class="fas fa-plug"></i> Web & API Development</li>
+      <li><i class="fas fa-compress-arrows-alt"></i> Process Optimization</li>
+      <li><i class="fas fa-chart-bar"></i> Data Storytelling</li>
+    </ul>
+  </div>
 </div>
 
-<h2 class="centerTitles">AI & ML Professional Skills</h2>
-<div class="skills-section">
-    <div class="skill-badge">Data Science & Machine Learning</div>
-    <div class="skill-badge">Generative AI & LLMs</div>
-    <div class="skill-badge">Data Analysis</div>
-    <div class="skill-badge">Statistical Analysis</div>
-    <div class="skill-badge">A/B Testing</div>
-    <div class="skill-badge">AI-Powered Automation</div>
-    <div class="skill-badge">Agile Methodologies</div>
-    <div class="skill-badge">Process Optimization</div>
-    <div class="skill-badge">Data Storytelling</div>
-    <div class="skill-badge">ETL and Data Wrangling</div>
-    <div class="skill-badge">Web & API Development</div>
-</div>
-<div>
-  <h2 class="centerTitles">Languages</h2>
-  <div class="languages">
-    <div class="language">
-      <img src="{% static 'portfolio/images/portugal-flag.png' %}" alt="Portuguese Flag">
-      <b>PT</b>
+<div class="personal-row">
+  <div class="personal-block">
+    <h4 class="skills-group-title">Languages</h4>
+    <div class="languages-inline">
+      <div class="language-inline">
+        <img src="{% static 'portfolio/images/portugal-flag.png' %}" alt="Portuguese Flag">
+        <span>Portuguese</span>
+      </div>
+      <div class="language-inline">
+        <img src="{% static 'portfolio/images/english-flag.jpg' %}" alt="English Flag">
+        <span>English</span>
+      </div>
+      <div class="language-inline">
+        <img src="{% static 'portfolio/images/spain-flag.png' %}" alt="Spanish Flag">
+        <span>Spanish</span>
+      </div>
     </div>
-    <div class="language">
-      <img src="{% static 'portfolio/images/english-flag.jpg' %}" alt="English Flag">
-      <b>EN</b>
-    </div>
-    <div class="language">
-      <img src="{% static 'portfolio/images/spain-flag.png' %}" alt="Spanish Flag">
-      <b>ES</b>
+  </div>
+  <div class="personal-block">
+    <h4 class="skills-group-title">Hobbies</h4>
+    <div class="hobbies-inline">
+      <div><i class="fa-solid fa-book"></i><span>Reading</span></div>
+      <div><i class="fa-solid fa-person-walking"></i><span>Running</span></div>
+      <div><i class="fa-solid fa-utensils"></i><span>Cooking</span></div>
     </div>
   </div>
 </div>
 <section>
-    <h2 class="centerTitles">Hobbies</h2>
-    <div class="hobbies">
-        <div>
-          <i class="fa-solid fa-book"></i>
-            <p>Read</p>
-        </div>
-        <div>
-            <i class="fa-solid fa-person-walking"></i>
-            <p>Run</p>
-        </div>
-        <div>
-            <i class="fa-solid fa-utensils"></i>
-            <p>Cook</p>
-        </div>
-    </div>
-</section>
-<section>
-  <h2 class="centerTitles" id="lifePath" style="scroll-margin-top: 75px;">Life Path</h2>
+  <h2 class="centerTitles" id="lifePath" style="scroll-margin-top: 70px;">Life Path</h2>
   <div class="timeline">
     <div class="percurso left">
       <div class="content">
-        <h2>04/2025 - Present</h2>
-        <p style="font-size: 18px;"><b>AI Solutions Engineer</b></p>
-        <p><b>Company:</b>
-          <i><a href="https://cymbiotika.com/" target="_blank" class="link"
-            >Cymbiotika</a
-          ></i>
-        </p>
-        <p><b>Description:</b></p>
-          <ul style="padding-left: 30px;">
-              <li>Architected and deployed a production-ready LLM-powered chatbot, <b>boosting conversion rates from 3% to 14% within two weeks</b> by integrating real-time product data and customer records for personalized recommendations.</li>
-              <li><b>Eliminated the need for an $80K/year copywriter</b> by developing a Python-based content-generation agent leveraging OpenAI + Anthropic with Monday.com’s GraphQL API, reducing content turnaround time from days to minutes.</li>
-              <li>Built and maintained a <b>centralized product database</b> and engineered <b>RESTful APIs</b> to power scalable automation workflows, ensuring consistent, high-quality data flow across AI systems.</li>
-              <li>Automated extraction and ingestion of key product insights from CSO meetings by integrating Google Drive, audio/video processing, and NLP, <b>delivering structured data to marketing and product teams while reducing manual effort and data lag</b>.</li>
-          </ul>
+        <h3 class="tl-title">AI Solutions Engineer</h3>
+        <p class="tl-meta"><a href="https://cymbiotika.com/" target="_blank" class="link">Cymbiotika</a> · 04/2025 – Present</p>
+        <ul class="tl-list">
+          <li>Architected and deployed multi-agent AI chatbot, <b>increasing conversion rate from 3% to 14%</b> in 2nd week (v1→v2).</li>
+          <li>Evolved into AI Wellness Assistant (v3), <b>cutting escalation rate by ~30% and response time by 90%</b> vs. previous human-based provider, achieving TTFT 1.8s and 110 tok/s with real-time data, tool calls and VectorDB, improving user experience.</li>
+          <li>Built <b>Full-Stack AI Studio</b> for developing, testing, and monitoring production AI, featuring prompt versioning, multi-model A/B testing, automated evaluation pipelines, and real-time performance analytics.</li>
+          <li><b>Eliminated ~$80K/yr role</b> by building AI content-generation pipeline using OpenAI + Anthropic that produces ~150 copy variants, applies LLM-as-Judge pairwise ranking with TrueSkill, filtering to 10 brand-aligned options in 5 minutes.</li>
+          <li>Fine-tuned a large language model (LLM) on proprietary company data <b>improving contextual understanding</b> for copy generation.</li>
+          <li>Engineered <b>RESTful APIs alongside MCP servers</b> to support AI agents, automation workflows, and high-quality data across AI systems.</li>
+        </ul>
       </div>
     </div>
     <div class="percurso right">
       <div class="content">
-        <h2>01/2025 - 03/2025</h2>
-        <p style="font-size: 18px;"><b>Gen AI & Process Automation Consultant</b></p>
-        <p><b>School:</b>
-          <i><a href="https://rady.ucsd.edu/" target="_blank" class="link"
-            >University of California, San Diego</a
-          ></i>
-        </p>
-        <p><b>Description:</b></p>
-          <ul style="padding-left: 30px;">
-              <li>Research and develop AI-driven automation solutions using LLMs, LangChain, Pydantic, RAG, and APIs creating custom agents, data validation pipelines, and workflow automation for curriculum integration.</li>
-          </ul>
+        <h3 class="tl-title">Gen AI & Automation Consultant</h3>
+        <p class="tl-meta"><a href="https://rady.ucsd.edu/" target="_blank" class="link">UC San Diego</a> · 01/2025 – 03/2025</p>
+        <ul class="tl-list">
+          <li>Research and develop AI-driven automation solutions using LLMs, LangChain, Pydantic, RAG, and APIs creating custom agents, data validation pipelines, and workflow automation for curriculum integration.</li>
+        </ul>
       </div>
     </div>
     <div class="percurso left">
       <div class="content">
-        <h2>10/2024 - 12/2024</h2>
-        <p style="font-size: 18px;"><b>Graduate Teaching Assistant</b></p>
-        <p><b>School:</b>
-          <i><a href="https://rady.ucsd.edu/" target="_blank" class="link"
-            >University of California, San Diego</a
-          ></i>
-        </p>
-        <p><b>Description:</b></p>
-          <ul style="padding-left: 30px;">
-              <li>Graduate Teaching Assistant for the class Business Analytics of the MSBA.</li>
-              <li>Supported class execution for a graduate-level course covering Hypothesis Testing, Statistical Inference, Simulation Modeling, Regression Analysis, and Optimization.</li>
-              <li>Conducted weekly office hours to assist students, responded to inquiries on Piazza for support, and graded 100+ exams.</li>
-          </ul>
+        <h3 class="tl-title">Graduate Teaching Assistant</h3>
+        <p class="tl-meta"><a href="https://rady.ucsd.edu/" target="_blank" class="link">UC San Diego</a> · 10/2024 – 12/2024</p>
+        <ul class="tl-list">
+          <li>Graduate Teaching Assistant for the class Business Analytics of the MSBA.</li>
+          <li>Supported class execution for a graduate-level course covering Hypothesis Testing, Statistical Inference, Simulation Modeling, Regression Analysis, and Optimization.</li>
+          <li>Conducted weekly office hours to assist students, responded to inquiries on Piazza for support, and graded 100+ exams.</li>
+        </ul>
       </div>
     </div>
     <div class="percurso right">
       <div class="content">
-        <h2>09/2024</h2>
-        <p><b>Data Scientist Associate</b> - DataCamp Certification</p>
-        <p>
-          <i><a href="https://www.datacamp.com/certificate/DSA0015360479531" target="_blank" class="link"
-            >Certificate</a
-          ></i>
-        </p>
+        <h3 class="tl-title">Data Scientist Associate <span class="tl-tag">Certification</span></h3>
+        <p class="tl-meta">DataCamp · 09/2024 · <a href="https://www.datacamp.com/certificate/DSA0015360479531" target="_blank" class="link">View certificate</a></p>
       </div>
     </div>
     <div class="percurso left">
       <div class="content">
-        <h2>08/2024</h2>
-        <p><b>SQL Associate</b> - DataCamp Certification</p>
-        <p>
-          <i><a href="https://www.datacamp.com/certificate/SQA0013448860082" target="_blank" class="link"
-            >Certificate</a
-          ></i>
-        </p>
+        <h3 class="tl-title">SQL Associate <span class="tl-tag">Certification</span></h3>
+        <p class="tl-meta">DataCamp · 08/2024 · <a href="https://www.datacamp.com/certificate/SQA0013448860082" target="_blank" class="link">View certificate</a></p>
       </div>
     </div>
     <div class="percurso right">
       <div class="content">
-        <h2>03/2024 - 06/2024</h2>
-        <p style="font-size: 18px;"><b>Data Scientist</b></p>
-        <p><b>Company:</b>
-          <i><a href="https://www.mazdausa.com/" target="_blank" class="link"
-            >Mazda North American Operations</a
-          ></i>
-        </p>
-        <p><b>Description:</b></p>
-          <ul style="padding-left: 30px;">
-              <li>Led a team leveraging A/B testing and advanced statistical analyses (ANOVA, T-tests, Hypothesis Testing) to evaluate marketing initiatives impact on customer loyalty and dealership performance with <b>90% confidence</b>.</li>
-              <li>Engineered and deployed a predictive machine learning pipeline using Python, leveraging regression analysis, <b>identifying 4 significant key drivers</b> positively impacting customer loyalty, driving actionable business insights;</li>
-              <li>Delivered actionable insights on optimal investment strategies for key loyalty factors, projected returns, and used data visualization to outline results to stakeholders, to enhance dealership performance and support strategic decisions.</li>
-          </ul>
+        <h3 class="tl-title">Data Scientist</h3>
+        <p class="tl-meta"><a href="https://www.mazdausa.com/" target="_blank" class="link">Mazda North American Operations</a> · 03/2024 – 06/2024</p>
+        <ul class="tl-list">
+          <li>Led a team leveraging A/B testing and advanced statistical analyses (ANOVA, T-tests, Hypothesis Testing) to evaluate marketing initiatives impact on customer loyalty and dealership performance with <b>90% confidence</b>.</li>
+          <li>Engineered and deployed a predictive machine learning pipeline using Python, leveraging regression analysis, <b>identifying 4 significant key drivers</b> positively impacting customer loyalty, driving actionable business insights.</li>
+          <li>Delivered actionable insights on optimal investment strategies for key loyalty factors, projected returns, and used data visualization to outline results to stakeholders, to enhance dealership performance and support strategic decisions.</li>
+        </ul>
       </div>
     </div>
     <div class="percurso left">
       <div class="content">
-        <h2>01/2024</h2>
-        <p>Volunteered at the event
-          <i><a href="https://www.datascience.salon/" target="_blank" class="link"
-            >Data Science Salon</a
-          ></i> in Seattle.
-        </p>
+        <h3 class="tl-title">Volunteer <span class="tl-tag">Event</span></h3>
+        <p class="tl-meta"><a href="https://www.datascience.salon/" target="_blank" class="link">Data Science Salon</a> · Seattle · 01/2024</p>
       </div>
     </div>
     <div class="percurso right">
       <div class="content">
-        <h2>08/2023</h2>
-        <p>Started my <b>Master of Sciences in Business Analytics</b><p>
-          <b>University:</b>
-          <i><a href="https://www.ulusofona.pt/" target="_blank" class="link"
-            >University of California, San Diego</a
-          ></i>
-        </p>
-        <i><a href="{% url 'portfolio:ucsd' %}" class="link"
-          >Master's Information</a
-        ></i>
-        <p><b>Activities:</b></p>
-          <ul style="padding-left: 30px;">
-              <li>Member of Rady Data Analytics Club.</li>
-          </ul>
+        <h3 class="tl-title">MSc Business Analytics <span class="tl-tag">GPA 3.9 / 4</span></h3>
+        <p class="tl-meta"><a href="https://rady.ucsd.edu/" target="_blank" class="link">UC San Diego</a> · 08/2023</p>
+        <ul class="tl-list">
+          <li>Member of Rady Data Analytics Club.</li>
+          <li><b>Relevant Courses:</b> Web Mining & Recommender Systems, Analyzing Unstructured Data, Scalable Analytics, Customer Analytics.</li>
+        </ul>
       </div>
     </div>
     <div class="percurso left">
       <div class="content">
-        <h2>10/2022 - 06/2023</h2>
-        <p style="font-size: 18px;"><b>Data Analyst</b></p>
-        <p><b>Company:</b>
-          <i><a href="https://www.tmlmobilidade.pt/en/" target="_blank" class="link"
-            >Metropolitan Transports of Lisbon</a
-          ></i>
-        </p>
-        <p><b>Description:</b></p>
-          <ul style="padding-left: 30px;">
-              <li>Built a Django web application to embed dynamic MS Power BI dashboards with DAX for custom measures and Power Query for data wrangling, <b>achieving 85% user satisfaction</b> by visualizing Lisbon's metropolitan transport data.</li>
-              <li>Conducted comprehensive ETL processes to clean, transform, and structure data from 80+ tables, creating 20+ interactive, data-driven dashboards to facilitate stakeholder decision-making, mobility insights and promote public transparency.</li>
-              <li>Enhanced interface with HTML, CSS, and JavaScript, improving user experience and engagement.</li>
-          </ul>
+        <h3 class="tl-title">Data Analyst</h3>
+        <p class="tl-meta"><a href="https://www.tmlmobilidade.pt/en/" target="_blank" class="link">Metropolitan Transports of Lisbon</a> · 10/2022 – 06/2023</p>
+        <ul class="tl-list">
+          <li>Built a Django web application to embed dynamic MS Power BI dashboards with DAX for custom measures and Power Query for data wrangling, <b>achieving 85% user satisfaction</b> by visualizing Lisbon's metropolitan transport data.</li>
+          <li>Conducted comprehensive ETL processes to clean, transform, and structure data from 80+ tables, creating 20+ interactive, data-driven dashboards to facilitate stakeholder decision-making, mobility insights and promote public transparency.</li>
+          <li>Enhanced interface with HTML, CSS, and JavaScript, improving user experience and engagement.</li>
+        </ul>
       </div>
     </div>
     <div class="percurso right">
       <div class="content">
-        <h2>12/2022</h2>
-        <p>Obtained a <b>Certificate in Microsoft Power BI</b> from the trainer <i><a href="https://www.linkedin.com/in/pauloalexandrecosta/" target="_blank" class="link">Paulo Costa <i class="fa-brands fa-linkedin button1" style="color: black !important;"></i></a></i> by the company APIP.</p>
+        <h3 class="tl-title">Microsoft Power BI <span class="tl-tag">Certification</span></h3>
+        <p class="tl-meta">APIP · 12/2022 · Trainer: <a href="https://www.linkedin.com/in/pauloalexandrecosta/" target="_blank" class="link">Paulo Costa</a></p>
       </div>
     </div>
     <div class="percurso left">
       <div class="content">
-        <h2>10/2022</h2>
-        <p>SAP training at <i><a href="https://www.stratesys-ts.com/en/" target="_blank" class="link">Stratesys</a></i> during <i><a href="https://www.ulusofona.pt/en/event/tecweb-2022" target="_blank" class="link">Tecweb</a></i> week (10/03 - 10/07).</p>
+        <h3 class="tl-title">Software / Analytics Developer</h3>
+        <p class="tl-meta"><a href="https://www.fapil.pt/" target="_blank" class="link">Fapil - Indústria S.A.</a> · 02/2022 – 09/2022</p>
+        <ul class="tl-list">
+          <li>Automated workforce analytics by developing Power BI dashboards for HR, to analyze warehouse productivity trends, uncovering overstaffing inefficiencies, <b>driving a 20% efficiency improvement</b> through optimized staffing decisions.</li>
+          <li>Developed and configured SQL queries, stored procedures, and database tables in MS SQL Server, managing integrations with ERP, Power BI, and web applications by developing automations and <b>reducing process time by 75%</b>.</li>
+          <li>Created and enhanced web application pages and the company's ERP system, improving user experience and facilitating seamless operations.</li>
+        </ul>
       </div>
     </div>
     <div class="percurso right">
       <div class="content">
-        <h2>02/2022 to 09/2022</h2>
-        <p style="font-size: 18px;"><b>Software/Analytics Developer</b></p>
-        <p><b>Company:</b>
-          <i><a href="https://www.fapil.pt/" target="_blank" class="link"
-            >Fapil - Indústria S.A.</a
-          ></i>
-        </p>
-        <p><b>Description:</b></p>
-          <ul style="padding-left: 30px;">
-              <li>Automated workforce analytics by developing Power BI dashboards for HR, to analyze warehouse productivity trends, uncovering overstaffing inefficiencies, <b>driving a 20% efficiency improvement</b> through optimized staffing decisions.</li>
-              <li>Developed and configured SQL queries, stored procedures, and database tables in MS SQL Server, managing integrations with ERP, Power BI, and web applications by developing automations and <b>reducing process time by 75%</b>.</li>
-              <li>Created and enhanced web application pages and the company's ERP system, improving user experience and facilitating seamless operations.</li>
-          </ul>
-      </div>
-    </div>
-    <div class="percurso left">
-      <div class="content">
-        <h2>09/2020</h2>
-        <p>Started my <b>Bachelor's Degree in Information Technology Management</b></p>
-        <p>
-          <b>University:</b>
-          <i><a href="https://www.ulusofona.pt/" target="_blank" class="link"
-            >Lusófona University - University Center of Lisbon</a
-          ></i>
-        </p>
-        <i><a href="{% url 'portfolio:lusofona' %}" class="link"
-          >Bachelor's Information</a
-        ></i>
-        <p><b>Activities:</b></p>
-          <ul style="padding-left: 30px;">
-              <li>Selected as one of few students to engage in course audit meetings, contributing valuable insights to aid in quality assurance processes.</li>
-              <li>Member of TecWeb event - Managed preparation and assured detailed execution.</li>
-          </ul>
-      </div>
-    </div>
-    <div class="percurso right">
-      <div class="content">
-        <h2>01/2019</h2>
-        <p>
-          Earned the <b>Linkedin for Professionals</b> certificate through Fenix Digital.
-        </p>
-      </div>
-    </div>
-    <div class="percurso left">
-      <div class="content">
-        <h2>05/2014</h2>
-        <p>Volunteer at the <i><a href="http://www.servethecity.pt/" target="_blank" class="link"
-          >Serve The City</a
-        ></i> institution, where I've had the privilege of contributing in their canteen to serve meals to those in need.</p>
+        <h3 class="tl-title">BSc Information Technology Management <span class="tl-tag">GPA 3.7 / 4</span></h3>
+        <p class="tl-meta"><a href="https://www.ulusofona.pt/" target="_blank" class="link">Lusófona University</a> · 09/2020</p>
+        <ul class="tl-list">
+          <li>Selected as one of few students to engage in course audit meetings, contributing valuable insights to aid in quality assurance processes.</li>
+          <li>Member of TecWeb event — managed preparation and assured detailed execution.</li>
+          <li><b>Relevant Courses:</b> Algorithms and Data Structures, Software Engineering, Artificial Intelligence, Cloud Information Systems, Data Mining, Decision Support Systems, Databases, Requirements and Test Engineering.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
-</div>
-<h2 class="centerTitles" id="projects" style="scroll-margin-top: 75px; margin-top: 1rem;">Projects</h2>
-<div class="projetos" id="projectsContainer">
-  <div class="separadoresEsquerda" id="project1">
-    <div class="imgprojeto">
-        <img src="{% static 'portfolio/images/supplychainautomation.png' %}"/>
-    </div>
-    <div class="textCompetencias">
-        <h3>Supply Chain Automation <a href="https://www.linkedin.com/posts/martim-teixeira_ai-machinelearning-langchain-activity-7300599507098968064-0Rlq?utm_source=share&utm_medium=member_desktop&rcm=ACoAACzMdvoBWY4qk5QXn-KfeocDPVYUn-i9j1k" target="_blank"><i class="fa-solid fa-link button1"></i></a></h3> 
-        <p>I built an LLM-powered multi-agent system using LangChain and RAG to automate demand forecasting and 
-          decision-making in supply chain management, reducing manual tasks by up to 80%. Using Prophet, it 
-          forecasts demand for 120 days with a MAPE below 2%, outperforming LSTMs. Three AI agents collaborate 
-          to interpret requests, generate SQL queries, and deliver insights. The system also monitors capacity, 
-          generates automated reports, triggers alerts, and streamlines procurement by placing cost-optimized orders.</p>
-        <p><b>Technologies/Skills:</b> Python, Machine Learning, LLM, LangChain, Generative AI, Django</p>
+<h2 class="centerTitles" id="projects" style="scroll-margin-top: 70px; margin-top: 1rem;">Projects</h2>
+<div class="project-grid" id="projectsContainer">
+  <div class="project-card">
+    <img src="{% static 'portfolio/images/AIWA.jpg' %}" alt="AI Wellness Assistant"/>
+    <div class="project-card-body">
+      <h3>AI Wellness Assistant <a href="https://cymbiotika.com/" target="_blank"><i class="fa-solid fa-link button1"></i></a></h3>
+      <p>Production AI chatbot deployed at Cymbiotika, evolved from a conversion-focused chatbot (v1→v2, 3%→14% CVR) into a full wellness assistant (v3). Cuts escalation rate by ~30% and response time by 90% vs. the previous human-based provider, achieving TTFT 1.8s and 110 tok/s with real-time product data, tool calls, and VectorDB for personalised recommendations.</p>
+      <div class="project-tags">
+        <span>Python</span><span>Agentic AI</span><span>RAG</span><span>VectorDB</span><span>LLMs</span>
+      </div>
     </div>
   </div>
-  <div class="separadoresDireita" id="project2">
-    <div class="imgprojeto">
-        <img src="{% static 'portfolio/images/supportautomation.png' %}"/>
-    </div>
-    <div class="textCompetencias">
-        <h3>Customer Support Automation <a href="https://www.linkedin.com/posts/martim-teixeira_ai-automation-customersupport-activity-7298402530600923137-jCHD?utm_source=share&utm_medium=member_desktop&rcm=ACoAACzMdvoBWY4qk5QXn-KfeocDPVYUn-i9j1k" target="_blank"><i class="fa-solid fa-link button1"></i></a></h3> 
-        <p>To solve repetitive questions from users, I built an AI-powered automated support system that classifies 
-          incoming tickets, checks if a solution exists in the FAQ, and instantly responds with the relevant answer. 
-          If no match is found, it escalates the issue to a human agent. In a student IT support use case, this reduced 
-          redundant tickets, sped up response times, and allowed support teams to focus on real issues.</p>
-        <p><b>Technologies/Skills:</b> Python, LLM, Generative AI, Django</p>
+  <div class="project-card">
+    <img src="{% static 'portfolio/images/supplychainautomation.png' %}" alt="Supply Chain Automation"/>
+    <div class="project-card-body">
+      <h3>Supply Chain Automation <a href="https://www.linkedin.com/posts/martim-teixeira_ai-machinelearning-langchain-activity-7300599507098968064-0Rlq?utm_source=share&utm_medium=member_desktop&rcm=ACoAACzMdvoBWY4qk5QXn-KfeocDPVYUn-i9j1k" target="_blank"><i class="fa-solid fa-link button1"></i></a></h3>
+      <p>LLM-powered multi-agent system using LangChain and RAG to automate demand forecasting and decision-making in supply chain management, reducing manual tasks by up to 80%. Using Prophet, it forecasts demand for 120 days with a MAPE below 2%. Three AI agents collaborate to interpret requests, generate SQL queries, and deliver insights.</p>
+      <div class="project-tags">
+        <span>Python</span><span>LangChain</span><span>LLM</span><span>Generative AI</span><span>Django</span>
+      </div>
     </div>
   </div>
-  <div class="separadoresEsquerda" id="project4">
-    <div class="imgprojeto">
-        <img src="{% static 'portfolio/images/AUD.png' %}"/>
-    </div>
-    <div class="textCompetencias">
-        <h3>Amazon Reviews Sentiment Analysis - Analyzing Unstructured Data <a href="https://github.com/rsm-iiribarrenpenuelas/final-project-mgta415" target="_blank"><i class="fa-brands fa-github button1"></i
-          ></a></h3> 
-        <p>In this project, we developed a sentiment analysis system tailored to Amazon product reviews. Leveraging 
-          advanced natural language processing (NLP) and machine learning techniques, the goal was to accurately 
-          determine the sentiment expressed in feedback and classify it as positive, negative, or neutral categories. 
-          For that, we explored sentiment trends, word usage, and user engagement. This foundational work informed the 
-          design of a sophisticated analysis system capable to predict the sentiment. We used different model's, and 
-          evaluated the performance using train, test and validate sets, to ensure effectiveness.</p>
-        <p><b>Technologies/Skills:</b> Python (Machine Learning, NLP)</p>
+  <div class="project-card">
+    <img src="{% static 'portfolio/images/supportautomation.png' %}" alt="Customer Support Automation"/>
+    <div class="project-card-body">
+      <h3>Customer Support Automation <a href="https://www.linkedin.com/posts/martim-teixeira_ai-automation-customersupport-activity-7298402530600923137-jCHD?utm_source=share&utm_medium=member_desktop&rcm=ACoAACzMdvoBWY4qk5QXn-KfeocDPVYUn-i9j1k" target="_blank"><i class="fa-solid fa-link button1"></i></a></h3>
+      <p>AI-powered automated support system that classifies incoming tickets, checks if a solution exists in the FAQ, and instantly responds with the relevant answer. If no match is found, it escalates to a human agent — reducing redundant tickets and speeding up response times.</p>
+      <div class="project-tags">
+        <span>Python</span><span>LLM</span><span>Generative AI</span><span>Django</span>
+      </div>
     </div>
   </div>
-  <div class="separadoresDireita" id="project5">
-    <div class="imgprojeto">
-        <img src="{% static 'portfolio/images/Web_mining_project.png' %}"/>
-    </div>
-    <div class="textCompetencias">
-        <h3>Movies Recommendation and Rating Prediction - Web Mining & Recommender Systems <a href="https://github.com/Martimlt/Movies-Recommender-System" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3> 
-        <p>This project aims to create a movie recommendation system, focusing on user preferences and viewing history. 
-          Key steps include using a dataset with user ratings and movie preferences, and analyzing user behavior 
-          in film. The system will use machine learning for predicting user preferences and estimating ratings. The approach 
-          combines content-based filtering (cosine similarity scores) with advanced collaborative filtering methods like NMF and SVD. 
-          The most accurate model was used to recommend the top 10 movies to users.</p>
-        <p><b>Technologies/Skills:</b> Python, Machine Learning, Data Analysis</p>
+  <div class="project-card">
+    <img src="{% static 'portfolio/images/AUD.png' %}" alt="Amazon Reviews Sentiment Analysis"/>
+    <div class="project-card-body">
+      <h3>Amazon Reviews Sentiment Analysis <a href="https://github.com/rsm-iiribarrenpenuelas/final-project-mgta415" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3>
+      <p>Sentiment analysis system for Amazon product reviews using NLP and machine learning to classify feedback as positive, negative, or neutral. Explored sentiment trends, word usage, and user engagement, evaluating multiple models with train/test/validate splits.</p>
+      <div class="project-tags">
+        <span>Python</span><span>Machine Learning</span><span>NLP</span>
+      </div>
     </div>
   </div>
-  <div class="separadoresEsquerda" id="project6">
-    <div class="imgprojeto">
-        <img src="{% static 'portfolio/images/Website_ucsd.png' %}"/>
-    </div>
-    <div class="textCompetencias">
-        <h3>UCSD Parking Lots - Collecting and Analyze Large Data <a href="https://ucsdparkinglots.pythonanywhere.com/" target="_blank"><i class="fa-solid fa-link button1"></i></a>
-          <a href="https://github.com/rsm-mateixeira/ucsdparking" target="_blank"
-          ><i class="fa-brands fa-github button1"></i
-          ></a></h3> 
-        <p>This project at UC San Diego's Rady School of Management analyzes a decade-long dataset of parking lot 
-          usage across UCSD campuses, focusing on post-2018 data to examine the impact of COVID-19 on parking trends. 
-          Data was collected hourly from lots and structures and analyzed for patterns. Techniques used included web 
-          scraping, data transformation, Tableau for visualization, and Django for website development. The project 
-          aims to improve campus planning and resource allocation.</p>
-        <p>Carried out in the Fall quarter of the Master's degree</p>
-        <p><b>Team mates:</b> Grace Kim, Jeremy Edwards and Shridhar Rawat</p>
-        <p><b>Technologies/Skills:</b> Data Analysis, Tableau, Django, HTML, CSS, JavaScript</p>
+  <div class="project-card">
+    <img src="{% static 'portfolio/images/Web_mining_project.png' %}" alt="Movies Recommendation System"/>
+    <div class="project-card-body">
+      <h3>Movies Recommendation System <a href="https://github.com/Martimlt/Movies-Recommender-System" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3>
+      <p>Movie recommendation system combining content-based filtering (cosine similarity) with collaborative filtering methods (NMF and SVD) to predict user preferences and recommend the top 10 movies based on ratings and viewing history.</p>
+      <div class="project-tags">
+        <span>Python</span><span>Machine Learning</span><span>Data Analysis</span>
+      </div>
     </div>
   </div>
-  <div class="separadoresDireita" id="project7">
-    <div class="imgprojeto">
-        <img src="{% static 'portfolio/images/fake-news.png' %}"/>
-    </div>
-    <div class="textCompetencias">
-        <h3>Fake News Detection <a href="https://github.com/rsm-mateixeira/Fake-News-Detection/tree/main" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3> 
-        <p>This project developed a machine learning model to classify 44,000+ news articles as real or fake using 
-          NLP techniques. Preprocessing steps included text cleaning, tokenization, stopword removal, and lemmatization 
-          to prepare the data for feature extraction. A Logistic Regression model, trained with TF-IDF vectorization, 
-          achieved 98.3% accuracy, a 98% F1-score, a 1.84% false positive rate, and a 1.52% false negative rate. 
-          Cross-validation reinforced the model's robustness, while a word frequency analysis revealed key terms linked 
-          to misinformation patterns, offering insights into common fake news trends.</p>
-        <p><b>Technologies/Skills:</b> Pyhton (Machine Learning, NLP)</p>
+  <div class="project-card">
+    <img src="{% static 'portfolio/images/Website_ucsd.png' %}" alt="UCSD Parking Lots"/>
+    <div class="project-card-body">
+      <h3>UCSD Parking Lots Analysis <a href="https://ucsdparkinglots.pythonanywhere.com/" target="_blank"><i class="fa-solid fa-link button1"></i></a> <a href="https://github.com/rsm-mateixeira/ucsdparking" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3>
+      <p>Analyzed a decade-long dataset of parking lot usage across UCSD campuses, examining the impact of COVID-19 on parking trends. Used web scraping, data transformation, and Tableau for visualization, built with Django.</p>
+      <div class="project-tags">
+        <span>Data Analysis</span><span>Tableau</span><span>Django</span><span>JavaScript</span>
+      </div>
     </div>
   </div>
-  <div class="separadoresEsquerda" id="project9">
-    <div class="imgprojeto">
-        <img src="{% static 'portfolio/images/projetoLP2.png' %}"/>
-    </div>
-    <div class="textCompetencias">
-        <h3>DeisiGreatGame - Programming Languages II <a href="https://github.com/Martimlt/DeisiGreatGame" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3> 
-        <p>Virtual board game, leveraging advanced Java programming techniques. 
-          It mimics a programmer's journey through the software development process, where players face realistic challenges such 
-          as coding errors and the repercussions of suboptimal decisions. The game also incorporates elements of reward for 
-          employing best programming practices, facilitating progress. This project skillfully combines entertainment with 
-          educational insights into programming, reflecting my adept use of sophisticated Java features to create an engaging 
-          and instructive experience.</p>
-        <p><b>Technologies/Skills:</b> Java</p>
+  <div class="project-card project-card--hidden">
+    <img src="{% static 'portfolio/images/fake-news.png' %}" alt="Fake News Detection"/>
+    <div class="project-card-body">
+      <h3>Fake News Detection <a href="https://github.com/rsm-mateixeira/Fake-News-Detection/tree/main" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3>
+      <p>Machine learning model classifying 44,000+ news articles as real or fake using NLP. A Logistic Regression model with TF-IDF vectorization achieved 98.3% accuracy and a 98% F1-score, with cross-validation confirming robustness.</p>
+      <div class="project-tags">
+        <span>Python</span><span>Machine Learning</span><span>NLP</span>
+      </div>
     </div>
   </div>
-  <div class="separadoresDireita" id="project10">
-    <div class="imgprojeto">
-        <img src="{% static 'portfolio/images/ProjetoFP.png' %}"/>
+  <div class="project-card project-card--hidden">
+    <img src="{% static 'portfolio/images/projetoLP2.png' %}" alt="DeisiGreatGame"/>
+    <div class="project-card-body">
+      <h3>DeisiGreatGame <a href="https://github.com/Martimlt/DeisiGreatGame" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3>
+      <p>Virtual board game built with advanced Java techniques, simulating a programmer's journey through software development. Players face realistic challenges like coding errors and suboptimal decisions, earning rewards for best practices.</p>
+      <div class="project-tags">
+        <span>Java</span>
+      </div>
     </div>
-    <div class="textCompetencias">
-        <h3>Chess Game<a href="https://github.com/Martimlt/Xadrez" target="_blank"
-          ><i class="fa-brands fa-github button1"></i
-          ></a></h3>
-        <p>My first contact with programming was an ambitious venture into the realm of digital strategy games with a Chess game developed using Kotlin.
-           This endeavor taught me the intricacies of game design, from implementing chess rules to creating a user-friendly interface for displaying the 
-           board and movements. Through this project, I not only learned to code but also discovered the joy of bringing complex logic and interaction 
-           to life in a digital format. It was a challenging yet rewarding introduction to programming, laying a solid foundation for my future projects.</p>
-        <p><b>Technologies/Skills:</b> Kotlin</p>
+  </div>
+  <div class="project-card project-card--hidden">
+    <img src="{% static 'portfolio/images/ProjetoFP.png' %}" alt="Chess Game"/>
+    <div class="project-card-body">
+      <h3>Chess Game <a href="https://github.com/Martimlt/Xadrez" target="_blank"><i class="fa-brands fa-github button1"></i></a></h3>
+      <p>First programming project — a fully functional chess game in Kotlin implementing all chess rules and a user-friendly board interface. A challenging introduction to programming logic, game design, and complex state management.</p>
+      <div class="project-tags">
+        <span>Kotlin</span>
+      </div>
     </div>
   </div>
 </div>
-<button id="toggleProjects" onclick="toggleProjects()" style="display: block; margin: 0px auto 20px auto; background: none; border: none; color: rgb(218, 217, 217); text-decoration: underline; cursor: pointer; padding: 0; font-size: 16px;">Show More Projects ↓</button>
-<section>
-  <h2 class="centerTitles" id="contact" style="scroll-margin-top: 75px;">Contact Information</h2>
-  <div style="text-align: center; color: rgb(218, 217, 217);">
-    <p><b>Email:</b> mlteixeira2002@gmail.com</p>
-    <p><b>Student Email:</b> mateixeira@ucsd.edu</p>
-    <p><b>Phone Number:</b> +1-619-983-5184</p>
-    <p><b>Alternative Phone Number:</b> +351 931 327 957</p>
-  </div>
-  <h2 class="centerTitles">Contact Me!</h2>
-  <div class="contact-form-container">
+<button id="toggleProjects" style="display: block; margin: 0px auto 20px auto; background: none; border: none; color: rgb(218, 217, 217); text-decoration: underline; cursor: pointer; padding: 0; font-size: 16px;">Show More Projects ↓</button>
+<section class="contact-section">
+  <h2 class="centerTitles" id="contact" style="scroll-margin-top: 70px;">Contact</h2>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h3>Get in touch</h3>
+      <p>Feel free to reach out for opportunities, collaborations, or just to say hello.</p>
+      <div class="contact-info-items">
+        <div class="contact-info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>martimltei@gmail.com</span>
+        </div>
+        <div class="contact-info-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+1-619-983-5184</span>
+        </div>
+        <div class="contact-info-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+351 931 327 957</span>
+        </div>
+      </div>
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/martim-teixeira/" target="_blank"><i class="fa-brands fa-linkedin button2"></i></a>
+        <a href="https://github.com/Martimlt" target="_blank"><i class="fa-brands fa-github button2"></i></a>
+      </div>
+    </div>
     <form method="post" class="contact-form">
       {% csrf_token %}
-      {{ contact_form.as_p }}
-      <button type="submit" class="btn" style="align-items: center;">Submit</button>
+      <div class="form-group">
+        <label for="{{ contact_form.name.id_for_label }}">Name</label>
+        {{ contact_form.name }}
+      </div>
+      <div class="form-group">
+        <label for="{{ contact_form.email.id_for_label }}">Email</label>
+        {{ contact_form.email }}
+      </div>
+      <div class="form-group">
+        <label for="{{ contact_form.subject.id_for_label }}">Subject</label>
+        {{ contact_form.subject }}
+      </div>
+      <div class="form-group">
+        <label for="{{ contact_form.message.id_for_label }}">Message</label>
+        {{ contact_form.message }}
+      </div>
+      <button type="submit" class="btn">Send Message</button>
     </form>
   </div>
 </section>
@@ -500,7 +399,7 @@ document.querySelector('.scroll-down a').addEventListener('click', function(e) {
     const targetElement = document.querySelector('#about');
 
     // Define the height of the header or the offset you want
-    const headerOffset = 90; // Adjust this value as needed
+    const headerOffset = 64;
 
     // Calculate the position to scroll to, considering the header offset
     const elementPosition = targetElement.offsetTop;
